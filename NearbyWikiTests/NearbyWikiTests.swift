@@ -6,8 +6,8 @@
 //  Copyright © 2020 test. All rights reserved.
 //
 
-import XCTest
 @testable import NearbyWiki
+import XCTest
 
 class NearbyWikiTests: XCTestCase {
 

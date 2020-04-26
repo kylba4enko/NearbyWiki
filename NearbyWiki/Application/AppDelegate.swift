@@ -10,14 +10,12 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     var window: UIWindow?
     private var appCoordinator: AppCoordinator!
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-//        ProgressHUD.setup()
 
         let rootNavigationController = UINavigationController()
         appCoordinator = AppCoordinator(navigationController: rootNavigationController)
@@ -30,4 +28,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-

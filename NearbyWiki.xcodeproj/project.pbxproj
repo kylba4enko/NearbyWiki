@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		8468123F24559E200007E159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8468123D24559E200007E159 /* LaunchScreen.storyboard */; };
 		8468124A24559E200007E159 /* NearbyWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468124924559E200007E159 /* NearbyWikiTests.swift */; };
 		8468125524559F960007E159 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468125424559F960007E159 /* AppCoordinator.swift */; };
+		E5CA6F4D46E92F49470BB88E /* Pods_NearbyWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6110E928484B57020D47AD65 /* Pods_NearbyWiki.framework */; };
+		F4CA6A6B96F5AF6A9ADD8F43 /* Pods_NearbyWikiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83982501A4ADB151F8AB82BA /* Pods_NearbyWikiTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A4BE86A335B9DF361B94494 /* Pods-NearbyWikiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWikiTests.release.xcconfig"; path = "Target Support Files/Pods-NearbyWikiTests/Pods-NearbyWikiTests.release.xcconfig"; sourceTree = "<group>"; };
+		6110E928484B57020D47AD65 /* Pods_NearbyWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearbyWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		714C00590EB4D007EF8DD562 /* Pods-NearbyWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWiki.release.xcconfig"; path = "Target Support Files/Pods-NearbyWiki/Pods-NearbyWiki.release.xcconfig"; sourceTree = "<group>"; };
+		83982501A4ADB151F8AB82BA /* Pods_NearbyWikiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearbyWikiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8468122F24559E1C0007E159 /* NearbyWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbyWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8468123224559E1C0007E159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8468123624559E1C0007E159 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +45,8 @@
 		8468124B24559E200007E159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8468125424559F960007E159 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8468125E2455A2690007E159 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		8AB9C45C36480C2683E60D3A /* Pods-NearbyWikiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWikiTests.debug.xcconfig"; path = "Target Support Files/Pods-NearbyWikiTests/Pods-NearbyWikiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E6A5947D9D01CC14DC1062C7 /* Pods-NearbyWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWiki.debug.xcconfig"; path = "Target Support Files/Pods-NearbyWiki/Pods-NearbyWiki.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5CA6F4D46E92F49470BB88E /* Pods_NearbyWiki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,18 +62,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4CA6A6B96F5AF6A9ADD8F43 /* Pods_NearbyWikiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		244D98A5AE5C9659E528F0A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6110E928484B57020D47AD65 /* Pods_NearbyWiki.framework */,
+				83982501A4ADB151F8AB82BA /* Pods_NearbyWikiTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8468122624559E1C0007E159 = {
 			isa = PBXGroup;
 			children = (
 				8468123124559E1C0007E159 /* NearbyWiki */,
 				8468124824559E200007E159 /* NearbyWikiTests */,
 				8468123024559E1C0007E159 /* Products */,
+				9697E1C2B759CE89C00C195B /* Pods */,
+				244D98A5AE5C9659E528F0A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +140,7 @@
 		846812582455A0BD0007E159 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				846812612455AC430007E159 /* SwiftGen */,
 				8468123B24559E200007E159 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -165,6 +187,24 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		846812612455AC430007E159 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		9697E1C2B759CE89C00C195B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6A5947D9D01CC14DC1062C7 /* Pods-NearbyWiki.debug.xcconfig */,
+				714C00590EB4D007EF8DD562 /* Pods-NearbyWiki.release.xcconfig */,
+				8AB9C45C36480C2683E60D3A /* Pods-NearbyWikiTests.debug.xcconfig */,
+				3A4BE86A335B9DF361B94494 /* Pods-NearbyWikiTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,9 +212,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8468124E24559E200007E159 /* Build configuration list for PBXNativeTarget "NearbyWiki" */;
 			buildPhases = (
+				2F0EC0F503386EEEA4CF0D1F /* [CP] Check Pods Manifest.lock */,
 				8468122B24559E1C0007E159 /* Sources */,
 				8468122C24559E1C0007E159 /* Frameworks */,
 				8468122D24559E1C0007E159 /* Resources */,
+				8468125F2455A8F40007E159 /* SwiftLint */,
+				846812602455A91C0007E159 /* SwiftGen */,
+				E524771A5C36B237369A412C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,6 +233,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8468125124559E200007E159 /* Build configuration list for PBXNativeTarget "NearbyWikiTests" */;
 			buildPhases = (
+				718464C66E966A6A854F9788 /* [CP] Check Pods Manifest.lock */,
 				8468124124559E200007E159 /* Sources */,
 				8468124224559E200007E159 /* Frameworks */,
 				8468124324559E200007E159 /* Resources */,
@@ -261,6 +306,106 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2F0EC0F503386EEEA4CF0D1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NearbyWiki-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		718464C66E966A6A854F9788 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NearbyWikiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8468125F2455A8F40007E159 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		846812602455A91C0007E159 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen config run --config swiftgen.yml\n";
+		};
+		E524771A5C36B237369A412C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NearbyWiki/Pods-NearbyWiki-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NearbyWiki/Pods-NearbyWiki-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NearbyWiki/Pods-NearbyWiki-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8468122B24559E1C0007E159 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -312,6 +457,7 @@
 /* Begin XCBuildConfiguration section */
 		8468124C24559E200007E159 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8468125E2455A2690007E159 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -372,6 +518,7 @@
 		};
 		8468124D24559E200007E159 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8468125E2455A2690007E159 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -426,6 +573,7 @@
 		};
 		8468124F24559E200007E159 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6A5947D9D01CC14DC1062C7 /* Pods-NearbyWiki.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -446,6 +594,7 @@
 		};
 		8468125024559E200007E159 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 714C00590EB4D007EF8DD562 /* Pods-NearbyWiki.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -466,6 +615,7 @@
 		};
 		8468125224559E200007E159 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AB9C45C36480C2683E60D3A /* Pods-NearbyWikiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +637,7 @@
 		};
 		8468125324559E200007E159 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A4BE86A335B9DF361B94494 /* Pods-NearbyWikiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
