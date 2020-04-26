@@ -1,0 +1,12 @@
+//
+//  Development.xcconfig
+//  NearbyWiki
+//
+//  Created by Max Kulbachenko on 26.04.2020.
+//  Copyright © 2020 test. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_URL = https://en.wikipedia.org/w/api.php
