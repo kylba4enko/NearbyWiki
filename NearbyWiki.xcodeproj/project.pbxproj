@@ -14,6 +14,14 @@
 		8468123F24559E200007E159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8468123D24559E200007E159 /* LaunchScreen.storyboard */; };
 		8468124A24559E200007E159 /* NearbyWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468124924559E200007E159 /* NearbyWikiTests.swift */; };
 		8468125524559F960007E159 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468125424559F960007E159 /* AppCoordinator.swift */; };
+		846812632455AD8B0007E159 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846812622455AD8B0007E159 /* AppDependencies.swift */; };
+		846812662455AE870007E159 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846812652455AE870007E159 /* Alert.swift */; };
+		846812682455AEE80007E159 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 846812672455AEE80007E159 /* Localizable.strings */; };
+		8468126B2455AF210007E159 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468126A2455AF210007E159 /* StringExtension.swift */; };
+		846812702455B0DB0007E159 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468126C2455B0DB0007E159 /* Assets.swift */; };
+		846812712455B0DB0007E159 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468126D2455B0DB0007E159 /* Storyboards.swift */; };
+		846812722455B0DB0007E159 /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468126E2455B0DB0007E159 /* Plist.swift */; };
+		846812732455B0DB0007E159 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468126F2455B0DB0007E159 /* L10n.swift */; };
 		E5CA6F4D46E92F49470BB88E /* Pods_NearbyWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6110E928484B57020D47AD65 /* Pods_NearbyWiki.framework */; };
 		F4CA6A6B96F5AF6A9ADD8F43 /* Pods_NearbyWikiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83982501A4ADB151F8AB82BA /* Pods_NearbyWikiTests.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +53,14 @@
 		8468124B24559E200007E159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8468125424559F960007E159 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8468125E2455A2690007E159 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		846812622455AD8B0007E159 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		846812652455AE870007E159 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		846812672455AEE80007E159 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		8468126A2455AF210007E159 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		8468126C2455B0DB0007E159 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		8468126D2455B0DB0007E159 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		8468126E2455B0DB0007E159 /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
+		8468126F2455B0DB0007E159 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		8AB9C45C36480C2683E60D3A /* Pods-NearbyWikiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWikiTests.debug.xcconfig"; path = "Target Support Files/Pods-NearbyWikiTests/Pods-NearbyWikiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6A5947D9D01CC14DC1062C7 /* Pods-NearbyWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWiki.debug.xcconfig"; path = "Target Support Files/Pods-NearbyWiki/Pods-NearbyWiki.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +138,7 @@
 			children = (
 				8468123224559E1C0007E159 /* AppDelegate.swift */,
 				8468125424559F960007E159 /* AppCoordinator.swift */,
+				846812622455AD8B0007E159 /* AppDependencies.swift */,
 				846812572455A0B60007E159 /* Sources */,
 				846812582455A0BD0007E159 /* Resources */,
 			);
@@ -131,6 +148,8 @@
 		846812572455A0B60007E159 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				846812692455AF080007E159 /* Extensions */,
+				846812642455AE5E0007E159 /* Protocols */,
 				8468125A2455A1670007E159 /* Services */,
 				846812592455A1610007E159 /* Scenes */,
 			);
@@ -142,6 +161,7 @@
 			children = (
 				846812612455AC430007E159 /* SwiftGen */,
 				8468123B24559E200007E159 /* Assets.xcassets */,
+				846812672455AEE80007E159 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -190,8 +210,28 @@
 		846812612455AC430007E159 /* SwiftGen */ = {
 			isa = PBXGroup;
 			children = (
+				8468126C2455B0DB0007E159 /* Assets.swift */,
+				8468126F2455B0DB0007E159 /* L10n.swift */,
+				8468126E2455B0DB0007E159 /* Plist.swift */,
+				8468126D2455B0DB0007E159 /* Storyboards.swift */,
 			);
 			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		846812642455AE5E0007E159 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				846812652455AE870007E159 /* Alert.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		846812692455AF080007E159 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8468126A2455AF210007E159 /* StringExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9697E1C2B759CE89C00C195B /* Pods */ = {
@@ -292,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8468123F24559E200007E159 /* LaunchScreen.storyboard in Resources */,
+				846812682455AEE80007E159 /* Localizable.strings in Resources */,
 				8468123C24559E200007E159 /* Assets.xcassets in Resources */,
 				8468123A24559E1C0007E159 /* Main.storyboard in Resources */,
 			);
@@ -385,7 +426,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen config run --config swiftgen.yml\n";
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen config run --config  NearbyWiki-swiftgen.yml\n";
 		};
 		E524771A5C36B237369A412C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -411,6 +452,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846812712455B0DB0007E159 /* Storyboards.swift in Sources */,
+				846812662455AE870007E159 /* Alert.swift in Sources */,
+				846812702455B0DB0007E159 /* Assets.swift in Sources */,
+				846812722455B0DB0007E159 /* Plist.swift in Sources */,
+				846812732455B0DB0007E159 /* L10n.swift in Sources */,
+				846812632455AD8B0007E159 /* AppDependencies.swift in Sources */,
+				8468126B2455AF210007E159 /* StringExtension.swift in Sources */,
 				8468125524559F960007E159 /* AppCoordinator.swift in Sources */,
 				8468123724559E1C0007E159 /* ViewController.swift in Sources */,
 				8468123324559E1C0007E159 /* AppDelegate.swift in Sources */,

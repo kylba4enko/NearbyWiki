@@ -1,0 +1,23 @@
+strings:
+  inputs: NearbyWiki/Application/Resources/Localizable.strings
+  outputs:
+    templateName: structured-swift4
+    output: NearbyWiki/Application/Resources/SwiftGen/L10n.swift
+
+xcassets:
+  inputs: NearbyWiki/Application/Resources/Assets.xcassets
+  outputs:
+    templateName: swift4
+    output: NearbyWiki/Application/Resources/SwiftGen/Assets.swift
+
+ib:
+  inputs: NearbyWiki/Application/Sources/Scenes
+  outputs:
+    - templateName: scenes-swift4
+      output: NearbyWiki/Application/Resources/SwiftGen/Storyboards.swift
+
+plist:
+  inputs: NearbyWiki/
+  outputs:
+    templateName: runtime-swift4
+    output: NearbyWiki/Application/Resources/SwiftGen/Plist.swift
