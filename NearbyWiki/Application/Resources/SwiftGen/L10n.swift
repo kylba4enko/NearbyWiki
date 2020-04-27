@@ -13,6 +13,8 @@ import Foundation
 internal enum L10n {
   /// Failed to get location
   internal static let failedToGetLocation = L10n.tr("Localizable", "Failed to get location")
+  /// Failed to load nearby places
+  internal static let failedToLoadNearbyPlaces = L10n.tr("Localizable", "Failed to load nearby places")
   /// Ok
   internal static let ok = L10n.tr("Localizable", "Ok")
   /// You
