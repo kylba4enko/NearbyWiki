@@ -1,24 +1,44 @@
 PODS:
+  - Alamofire (5.1.0)
+  - ModelMapper (10.0.0):
+    - ModelMapper/Core (= 10.0.0)
+  - ModelMapper/Core (10.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
+  - RxSwift (5.1.1)
   - SwiftGen (6.1.0)
   - SwiftLint (0.27.0)
   - Swinject (2.6.0)
 
 DEPENDENCIES:
+  - ModelMapper
+  - Moya/RxSwift (= 14.0.0)
   - SwiftGen (= 6.1.0)
   - SwiftLint (= 0.27.0)
   - Swinject (= 2.6.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - ModelMapper
+    - Moya
+    - RxSwift
     - SwiftGen
     - SwiftLint
     - Swinject
 
 SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  ModelMapper: a8dbf2a2003bf626627b9fe7c9a22b3405a30404
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: 290cebc7acece172cc0375fc0997bf3fb907244d
+PODFILE CHECKSUM: 2bcbb0fcf32bf29282650977a761b8830ba18bb1
 
 COCOAPODS: 1.8.4
