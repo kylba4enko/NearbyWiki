@@ -8,10 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol HomeView: class, AlertViewable {
+
+}
+
+class HomeViewController: UIViewController {
+
+    var presenter: HomePresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        presenter.viewDidLoad()
     }
+}
+
+extension HomeViewController: HomeView {
+
 }

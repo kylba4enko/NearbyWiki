@@ -22,6 +22,7 @@ internal enum PlistFiles {
   internal static let cfBundleShortVersionString: String = _document["CFBundleShortVersionString"]
   internal static let cfBundleVersion: String = _document["CFBundleVersion"]
   internal static let lsRequiresIPhoneOS: Bool = _document["LSRequiresIPhoneOS"]
+  internal static let nsLocationWhenInUseUsageDescription: String = _document["NSLocationWhenInUseUsageDescription"]
   internal static let uiLaunchStoryboardName: String = _document["UILaunchStoryboardName"]
   internal static let uiMainStoryboardFile: String = _document["UIMainStoryboardFile"]
   internal static let uiRequiredDeviceCapabilities: [String] = _document["UIRequiredDeviceCapabilities"]
