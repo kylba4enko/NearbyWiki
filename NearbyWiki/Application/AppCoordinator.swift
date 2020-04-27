@@ -23,6 +23,9 @@ final class AppCoordinator: Coordinator {
     }
 
     func start() {
-
+        let homeViewController = StoryboardScene.Main.homeViewController.instantiate()
+        let homePresenter = HomePresenterImpl(view: homeViewController)
+        homeViewController.presenter = homePresenter
+        rootNavigationController.viewControllers = [homeViewController]
     }
 }

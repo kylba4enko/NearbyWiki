@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol Alert {
+protocol AlertViewable {
     func showAlert(title: String, message: String, okCompletion: (() -> Void)?)
 }
 
-extension Alert where Self: UIViewController {
+extension AlertViewable where Self: UIViewController {
 
     func showAlert(title: String, message: String, okCompletion: (() -> Void)? = nil) {
         let okAction = UIAlertAction(title: L10n.ok, style: .default, handler: { _ in
