@@ -12,7 +12,6 @@ import RxSwift
 protocol HomePresenter {
     init(view: HomeView, locationService: LocationService, placesRequestService: PlacesRequestService)
     func viewDidLoad()
-    func viewDidShowInitialLocation()
 }
 
 class HomePresenterImpl: HomePresenter {
@@ -20,7 +19,7 @@ class HomePresenterImpl: HomePresenter {
     private weak var view: HomeView?
     private let locationService: LocationService
     private let placesRequestService: PlacesRequestService
-    private var initialLocation: CLLocationCoordinate2D?
+    private let disposeBag = DisposeBag()
 
     required init(view: HomeView,
                   locationService: LocationService = resolve(),
@@ -34,46 +33,32 @@ class HomePresenterImpl: HomePresenter {
     func viewDidLoad() {
         findInitialLocation()
     }
-
-    func viewDidShowInitialLocation() {
-        fetchNearbyPlaces()
-    }
 }
 
 private extension HomePresenterImpl {
 
     func findInitialLocation() {
-        locationService.startListenLocation(onUpdate: { [weak self] location in
-            guard let self = self else {
-                return
-            }
-            self.locationService.stopListenLocation()
-            self.initialLocation = location.coordinate
-            self.view?.showCurrentCoordinate(location.coordinate)
-        }, onFail: { error in
-            self.view?.showAlert(title: L10n.failedToGetLocation, message: error.localizedDescription)
-        })
+        locationService.startListenLocation()
+            .take(1)
+            .subscribe(onNext: { [weak self] location in
+                self?.view?.showCurrentUserLocation(location.coordinate)
+                self?.fetchNearbyPlaces(location.coordinate)
+            }, onError: { [weak self] error in
+                self?.view?.showAlert(title: L10n.failedToGetLocation, message: error.localizedDescription)
+            }, onCompleted: { [weak self] in
+                self?.locationService.stopListenLocation()
+            }).disposed(by: disposeBag)
     }
 
-    func fetchNearbyPlaces() {
-        guard let initialLocation = initialLocation else {
-            return
-        }
-        placesRequestService.fetchPlaces(latitude: initialLocation.latitude,
-                                         longitude: initialLocation.longitude,
+    func fetchNearbyPlaces(_ coordinate: CLLocationCoordinate2D) {
+        placesRequestService.fetchPlaces(latitude: coordinate.latitude,
+                                         longitude: coordinate.longitude,
                                          radius: 10_000,
-            limit: 50)
-            .subscribe { [weak self] event in
-                guard let self = self else {
-                    return
-                }
-                switch event {
-                case .success(let response):
-                    self.view?.showNearbyPlaces(response.places)
-                case .error(let error):
-                    self.view?.showAlert(title: L10n.failedToGetLocation,
-                                         message: error.localizedDescription)
-                }
-            }
+                                         limit: 50)
+            .subscribe(onSuccess: { [weak self] response in
+                self?.view?.showNearbyPlaces(response.places)
+            }, onError: { [weak self] error in
+                self?.view?.showAlert(title: L10n.failedToGetLocation, message: error.localizedDescription)
+            }).disposed(by: disposeBag)
     }
 }
