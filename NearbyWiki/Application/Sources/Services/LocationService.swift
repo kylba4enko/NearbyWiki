@@ -7,9 +7,10 @@
 //
 
 import CoreLocation
+import RxSwift
 
 protocol LocationService {
-    func startListenLocation(onUpdate: @escaping (CLLocation) -> Void, onFail: @escaping (Error) -> Void)
+    func startListenLocation() -> Observable<CLLocation>
     func stopListenLocation()
 }
 
@@ -18,6 +19,8 @@ class LocationServiceImpl: NSObject, LocationService {
     private let locationManager = CLLocationManager()
     private var onUpdateCallback: ((CLLocation) -> Void)?
     private var onFailCallback: ((Error) -> Void)?
+
+    private var variable = PublishSubject<CLLocation>()
 
     override init() {
         super.init()
@@ -29,11 +32,10 @@ class LocationServiceImpl: NSObject, LocationService {
         stopListenLocation()
     }
 
-    func startListenLocation(onUpdate: @escaping (CLLocation) -> Void, onFail: @escaping (Error) -> Void) {
-        onUpdateCallback = onUpdate
-        onFailCallback = onFail
+    func startListenLocation() -> Observable<CLLocation> {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        return variable.asObservable()
     }
 
     func stopListenLocation() {
@@ -45,11 +47,11 @@ extension LocationServiceImpl: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLocation = locations.first {
-            onUpdateCallback?(currentLocation)
+            variable.onNext(currentLocation)
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        onFailCallback?(error)
+        variable.onError(error)
     }
 }

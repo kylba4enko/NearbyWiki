@@ -20,7 +20,6 @@ class PlacesRequestServiceImpl: PlacesRequestService {
     private let provider = MoyaProvider<PlaceTarget>()
 
     func fetchPlaces(latitude: Double, longitude: Double, radius: Int, limit: Int) -> Single<PlacesResponse> {
-
         return provider.rx
             .request(.getPlacesList(latitude, longitude, radius, limit))
             .map(to: PlacesResponse.self, keyPath: "query")

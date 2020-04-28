@@ -6,17 +6,17 @@ import RxSwift
     import Moya_ModelMapper
 #endif
 
-public extension ObservableType where E == Response {
+public extension ObservableType where Element == Response {
 
     @available(*, unavailable, renamed: "map(to:keyPath:)")
-    public func mapObject<T: Mappable>(type: T.Type, keyPath: String? = nil) -> Observable<T> { fatalError() }
+    func mapObject<T: Mappable>(type: T.Type, keyPath: String? = nil) -> Observable<T> { fatalError() }
 
     @available(*, unavailable, renamed: "map(to:keyPath:)")
-    public func mapArray<T: Mappable>(type: T.Type, keyPath: String? = nil) -> Observable<[T]> { fatalError() }
+    func mapArray<T: Mappable>(type: T.Type, keyPath: String? = nil) -> Observable<[T]> { fatalError() }
 
     @available(*, unavailable, renamed: "mapOptional(to:keyPath:)")
-    public func mapObjectOptional<T: Mappable>(type: T.Type, keyPath: String? = nil) -> Observable<T?> { fatalError() }
+    func mapObjectOptional<T: Mappable>(type: T.Type, keyPath: String? = nil) -> Observable<T?> { fatalError() }
 
     @available(*, unavailable, renamed: "mapOptional(to:keyPath:)")
-    public func mapArrayOptional<T: Mappable>(type: T.Type, keyPath: String? = nil) -> Observable<[T]?> { fatalError() }
+    func mapArrayOptional<T: Mappable>(type: T.Type, keyPath: String? = nil) -> Observable<[T]?> { fatalError() }
 }
