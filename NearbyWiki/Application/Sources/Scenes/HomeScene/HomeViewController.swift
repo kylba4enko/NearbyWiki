@@ -13,6 +13,9 @@ protocol HomeView: class, AlertViewable, ContainerViewable {
     func focusOn(_ coordinate: CLLocationCoordinate2D)
     func showPointsOfInterest(_ pointsOfInterest: [PointOfInterest])
     func showContainer(_ show: Bool, completion: (() -> Void)?)
+    func showRouteCoordinates(_ coordinates: [CLLocationCoordinate2D])
+    func updateBounds(_ bounds: Bounds)
+    func deselectPointsOfInterest()
 }
 
 class HomeViewController: UIViewController {
@@ -26,6 +29,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.showsUserLocation = true
         mapView.delegate = self
         containerViewHeightConstraint.constant = view.frame.size.height / 2
         containerViewBottomConstraint.constant = containerViewHeightConstraint.constant
@@ -45,7 +49,7 @@ extension HomeViewController: HomeView {
         let annotations = pointsOfInterest.map { poi in
             PointAnnotation(identifier: poi.identifier, title: poi.title, coordinate: poi.coordinate)
         }
-        mapView.addAnnotations(annotations)
+        mapView.showAnnotations(annotations, animated: true)
     }
 
     func showContainer(_ show: Bool, completion: (() -> Void)?) {
@@ -56,6 +60,28 @@ extension HomeViewController: HomeView {
             completion?()
         })
     }
+
+    func showRouteCoordinates(_ coordinates: [CLLocationCoordinate2D]) {
+        let polilyne = MKGeodesicPolyline(coordinates: coordinates, count: coordinates.count)
+        mapView.removeOverlays(mapView.overlays)
+        mapView.addOverlay(polilyne)
+    }
+
+    func updateBounds(_ bounds: Bounds) {
+        let southwest = MKMapPoint(bounds.southwest.asCLLocationCoordinate2D())
+        let northeast = MKMapPoint(bounds.northeast.asCLLocationCoordinate2D())
+        let rect = MKMapRect(x: fmin(southwest.x, northeast.x),
+                             y: fmin(southwest.y, northeast.y),
+                             width: fabs(southwest.x - northeast.x),
+                             height: fabs(southwest.y - northeast.y))
+        let space: CGFloat = 50
+        let edgeInset = UIEdgeInsets(top: space, left: space, bottom: space, right: space)
+        mapView.setVisibleMapRect(rect, edgePadding: edgeInset, animated: true)
+    }
+
+    func deselectPointsOfInterest() {
+        mapView.deselectAnnotation(mapView.selectedAnnotations.first, animated: true)
+    }
 }
 
 extension HomeViewController: MKMapViewDelegate {
@@ -64,5 +90,17 @@ extension HomeViewController: MKMapViewDelegate {
         if let annotation = view.annotation as? PointAnnotation {
             presenter.viewDidSelectPointOfInterest(annotation.identifier)
         }
+    }
+
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        guard let polyline = overlay as? MKPolyline else {
+            return MKOverlayRenderer()
+        }
+
+        let polylineRenderer = MKPolylineRenderer(overlay: polyline)
+        polylineRenderer.strokeColor = .systemBlue
+        polylineRenderer.lineWidth = 5
+
+        return polylineRenderer
     }
 }

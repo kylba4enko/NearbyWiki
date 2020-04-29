@@ -9,8 +9,9 @@
 import MapKit
 import RxSwift
 
-protocol PointOfInterestPresenterDelegate {
+protocol PointOfInterestPresenterDelegate: class {
     func pointOfInterestPresenterDidClose()
+    func pointOfInterestPresenterDidSelectRoute(_ route: Route)
 }
 
 protocol PointOfInterestPresenter {
@@ -29,7 +30,7 @@ protocol PointOfInterestPresenter {
 class PointOfInterestPresenterImpl: PointOfInterestPresenter {
 
     private weak var view: PointOfInterestView?
-    private let delegate: PointOfInterestPresenterDelegate
+    private weak var delegate: PointOfInterestPresenterDelegate?
     private let pointOfInterestRequestService: PointOfInterestRequestService
     private let routeRequestService: RouteRequestService
     private let imageRequestService: ImageRequestService
@@ -43,8 +44,7 @@ class PointOfInterestPresenterImpl: PointOfInterestPresenter {
                   currentLocation: CLLocationCoordinate2D,
                   pointOfInterestRequestService: PointOfInterestRequestService = resolve(),
                   routeRequestService: RouteRequestService = resolve(),
-                  imageRequestService: ImageRequestService = resolve()
-    ) {
+                  imageRequestService: ImageRequestService = resolve()) {
 
         self.view = view
         self.delegate = delegate
@@ -61,7 +61,7 @@ class PointOfInterestPresenterImpl: PointOfInterestPresenter {
     }
 
     func viewDidPressCloseButton() {
-        delegate.pointOfInterestPresenterDidClose()
+        delegate?.pointOfInterestPresenterDidClose()
     }
 }
 
@@ -93,9 +93,11 @@ private extension PointOfInterestPresenterImpl {
         let finish = Coordinate(lat: pointOfInterest.latitude, lon: pointOfInterest.longitude)
         routeRequestService.fetchRoute(start: start, finish: finish)
             .subscribe(onSuccess: { [weak self] routes in
-                print(routes)
+                if let route = routes.first {
+                    self?.delegate?.pointOfInterestPresenterDidSelectRoute(route)
+                }
             }, onError: { [weak self] error in
                 self?.view?.showAlert(title: L10n.failedToLoadRoutes, message: error.localizedDescription)
-            })
+            }).disposed(by: disposeBag)
     }
 }

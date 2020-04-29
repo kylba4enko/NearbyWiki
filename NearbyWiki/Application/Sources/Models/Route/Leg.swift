@@ -33,4 +33,3 @@ struct Leg: Decodable {
         steps = try container.decode([Step].self, forKey: .steps)
     }
 }
-

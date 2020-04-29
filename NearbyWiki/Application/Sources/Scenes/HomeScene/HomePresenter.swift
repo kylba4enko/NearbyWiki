@@ -54,9 +54,9 @@ class HomePresenterImpl: HomePresenter {
                                                           currentLocation: currentLocation)
         poiViewController.presenter = poiPresenter
         view?.replaceContainerContent(with: poiViewController)
-        view?.showContainer(true, completion: { [weak self] in
+        view?.showContainer(true) { [weak self] in
             self?.view?.focusOn(selectedPoi.coordinate)
-        })
+        }
     }
 }
 
@@ -67,7 +67,6 @@ private extension HomePresenterImpl {
             .take(1)
             .subscribe(onNext: { [weak self] location in
                 self?.currentLocation = location.coordinate
-                self?.view?.focusOn(location.coordinate)
                 self?.fetchPointsOfInterest(location.coordinate)
             }, onError: { [weak self] error in
                 self?.view?.showAlert(title: L10n.failedToGetLocation, message: error.localizedDescription)
@@ -85,14 +84,26 @@ private extension HomePresenterImpl {
                 self?.places = places
                 self?.view?.showPointsOfInterest(places)
             }, onError: { [weak self] error in
-                self?.view?.showAlert(title: L10n.failedToGetLocation, message: error.localizedDescription)
+                self?.view?.showAlert(title: L10n.failedToLoadPointsOfInterest, message: error.localizedDescription)
             }).disposed(by: disposeBag)
     }
 }
 
 extension HomePresenterImpl: PointOfInterestPresenterDelegate {
 
+    func pointOfInterestPresenterDidSelectRoute(_ route: Route) {
+        guard let coordinates = route.legs.first?.steps.flatMap({ step in
+            [step.startLocation.asCLLocationCoordinate2D(),
+             step.endLocation.asCLLocationCoordinate2D()]}) else {
+            return
+        }
+        view?.deselectPointsOfInterest()
+        view?.showRouteCoordinates(coordinates)
+        view?.updateBounds(route.bounds)
+    }
+
     func pointOfInterestPresenterDidClose() {
+        view?.deselectPointsOfInterest()
         view?.showContainer(false, completion: nil)
     }
 }

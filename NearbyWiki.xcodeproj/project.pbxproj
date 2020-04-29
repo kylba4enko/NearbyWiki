@@ -36,7 +36,7 @@
 		84ED1203245885B800C18230 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED1202245885B800C18230 /* NibLoadableView.swift */; };
 		84ED12052458A1D300C18230 /* RouteRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12042458A1D300C18230 /* RouteRequestService.swift */; };
 		84ED12072458B7FA00C18230 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12062458B7FA00C18230 /* Route.swift */; };
-		84ED120924595E3000C18230 /* PlaceInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED120824595E3000C18230 /* PlaceInfoPresenter.swift */; };
+		84ED120924595E3000C18230 /* PointOfInterestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED120824595E3000C18230 /* PointOfInterestPresenter.swift */; };
 		84ED120B24595EF400C18230 /* ContainerViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED120A24595EF400C18230 /* ContainerViewable.swift */; };
 		84ED120F2459863600C18230 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED120E2459863600C18230 /* Step.swift */; };
 		84ED12112459865500C18230 /* Bounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12102459865500C18230 /* Bounds.swift */; };
@@ -96,7 +96,7 @@
 		84ED1202245885B800C18230 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		84ED12042458A1D300C18230 /* RouteRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRequestService.swift; sourceTree = "<group>"; };
 		84ED12062458B7FA00C18230 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		84ED120824595E3000C18230 /* PlaceInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoPresenter.swift; sourceTree = "<group>"; };
+		84ED120824595E3000C18230 /* PointOfInterestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestPresenter.swift; sourceTree = "<group>"; };
 		84ED120A24595EF400C18230 /* ContainerViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewable.swift; sourceTree = "<group>"; };
 		84ED120E2459863600C18230 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		84ED12102459865500C18230 /* Bounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bounds.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 		8468125C2455A1790007E159 /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
-				84ED11F924587C2800C18230 /* PlaceInfo */,
+				84ED11F924587C2800C18230 /* PointOfInterest */,
 				845ABA902456E57400BFF31A /* HomePresenter.swift */,
 				8468123624559E1C0007E159 /* HomeViewController.swift */,
 				8468123824559E1C0007E159 /* Main.storyboard */,
@@ -304,13 +304,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		84ED11F924587C2800C18230 /* PlaceInfo */ = {
+		84ED11F924587C2800C18230 /* PointOfInterest */ = {
 			isa = PBXGroup;
 			children = (
-				84ED120824595E3000C18230 /* PlaceInfoPresenter.swift */,
+				84ED120824595E3000C18230 /* PointOfInterestPresenter.swift */,
 				84ED12002458856000C18230 /* PointOfInterestViewController.swift */,
 			);
-			path = PlaceInfo;
+			path = PointOfInterest;
 			sourceTree = "<group>";
 		};
 		84ED120C2459860600C18230 /* Place */ = {
@@ -519,8 +519,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n${PODS_ROOT}/SwiftLint/swiftlint\n\n";
 		};
 		846812602455A91C0007E159 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -581,7 +580,7 @@
 				84937E9C2457091000E24155 /* PlacesRequestService.swift in Sources */,
 				846812632455AD8B0007E159 /* AppDependencies.swift in Sources */,
 				84ED12172459896400C18230 /* Leg.swift in Sources */,
-				84ED120924595E3000C18230 /* PlaceInfoPresenter.swift in Sources */,
+				84ED120924595E3000C18230 /* PointOfInterestPresenter.swift in Sources */,
 				8468126B2455AF210007E159 /* StringExtension.swift in Sources */,
 				8449D26824587067007778D8 /* PointAnnotation.swift in Sources */,
 				84ED12052458A1D300C18230 /* RouteRequestService.swift in Sources */,
