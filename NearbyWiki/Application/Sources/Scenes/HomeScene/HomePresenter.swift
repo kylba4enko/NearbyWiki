@@ -7,31 +7,56 @@
 //
 
 import CoreLocation
+import Moya
 import RxSwift
 
 protocol HomePresenter {
-    init(view: HomeView, locationService: LocationService, placesRequestService: PlacesRequestService)
+    init(view: HomeView,
+         locationService: LocationService,
+         pointOfInterestRequestService: PointOfInterestRequestService)
+
     func viewDidLoad()
+    func viewDidSelectPointOfInterest(_ identifier: Int)
 }
 
 class HomePresenterImpl: HomePresenter {
 
     private weak var view: HomeView?
     private let locationService: LocationService
-    private let placesRequestService: PlacesRequestService
+    private let pointOfInterestRequestService: PointOfInterestRequestService
     private let disposeBag = DisposeBag()
+    private var currentLocation: CLLocationCoordinate2D?
+    private var places: [PointOfInterest]?
 
     required init(view: HomeView,
                   locationService: LocationService = resolve(),
-                  placesRequestService: PlacesRequestService = resolve()) {
+                  pointOfInterestRequestService: PointOfInterestRequestService = resolve()) {
 
         self.view = view
         self.locationService = locationService
-        self.placesRequestService = placesRequestService
+        self.pointOfInterestRequestService = pointOfInterestRequestService
     }
 
     func viewDidLoad() {
         findInitialLocation()
+    }
+
+    func viewDidSelectPointOfInterest(_ identifier: Int) {
+        guard let currentLocation = currentLocation,
+            let selectedPoi = places?.first(where: { $0.identifier == identifier }) else {
+            return
+        }
+
+        let poiViewController = StoryboardScene.Main.placeInfoViewController.instantiate()
+        let poiPresenter = PointOfInterestPresenterImpl(view: poiViewController,
+                                                          delegate: self,
+                                                          pointOfInterest: selectedPoi,
+                                                          currentLocation: currentLocation)
+        poiViewController.presenter = poiPresenter
+        view?.replaceContainerContent(with: poiViewController)
+        view?.showContainer(true, completion: { [weak self] in
+            self?.view?.focusOn(selectedPoi.coordinate)
+        })
     }
 }
 
@@ -41,8 +66,9 @@ private extension HomePresenterImpl {
         locationService.startListenLocation()
             .take(1)
             .subscribe(onNext: { [weak self] location in
-                self?.view?.showCurrentUserLocation(location.coordinate)
-                self?.fetchNearbyPlaces(location.coordinate)
+                self?.currentLocation = location.coordinate
+                self?.view?.focusOn(location.coordinate)
+                self?.fetchPointsOfInterest(location.coordinate)
             }, onError: { [weak self] error in
                 self?.view?.showAlert(title: L10n.failedToGetLocation, message: error.localizedDescription)
             }, onCompleted: { [weak self] in
@@ -50,15 +76,23 @@ private extension HomePresenterImpl {
             }).disposed(by: disposeBag)
     }
 
-    func fetchNearbyPlaces(_ coordinate: CLLocationCoordinate2D) {
-        placesRequestService.fetchPlaces(latitude: coordinate.latitude,
-                                         longitude: coordinate.longitude,
-                                         radius: 10_000,
-                                         limit: 50)
-            .subscribe(onSuccess: { [weak self] response in
-                self?.view?.showNearbyPlaces(response.places)
+    func fetchPointsOfInterest(_ coordinate: CLLocationCoordinate2D) {
+        pointOfInterestRequestService.fetchPointOfInterests(latitude: coordinate.latitude,
+                                                  longitude: coordinate.longitude,
+                                                  radius: 10_000,
+                                                  limit: 50)
+            .subscribe(onSuccess: { [weak self] places in
+                self?.places = places
+                self?.view?.showPointsOfInterest(places)
             }, onError: { [weak self] error in
                 self?.view?.showAlert(title: L10n.failedToGetLocation, message: error.localizedDescription)
             }).disposed(by: disposeBag)
+    }
+}
+
+extension HomePresenterImpl: PointOfInterestPresenterDelegate {
+
+    func pointOfInterestPresenterDidClose() {
+        view?.showContainer(false, completion: nil)
     }
 }

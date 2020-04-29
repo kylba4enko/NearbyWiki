@@ -15,6 +15,8 @@ internal enum L10n {
   internal static let failedToGetLocation = L10n.tr("Localizable", "Failed to get location")
   /// Failed to load nearby places
   internal static let failedToLoadNearbyPlaces = L10n.tr("Localizable", "Failed to load nearby places")
+  /// Failed to load routes
+  internal static let failedToLoadRoutes = L10n.tr("Localizable", "Failed to load routes")
   /// Ok
   internal static let ok = L10n.tr("Localizable", "Ok")
   /// You

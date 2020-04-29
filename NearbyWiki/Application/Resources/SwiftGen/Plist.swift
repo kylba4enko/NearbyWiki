@@ -12,7 +12,6 @@ import Foundation
 internal enum PlistFiles {
   private static let _document = PlistDocument(path: "Info.plist")
 
-  internal static let apiUrl: String = _document["API_URL"]
   internal static let cfBundleDevelopmentRegion: String = _document["CFBundleDevelopmentRegion"]
   internal static let cfBundleExecutable: String = _document["CFBundleExecutable"]
   internal static let cfBundleIdentifier: String = _document["CFBundleIdentifier"]
@@ -21,6 +20,8 @@ internal enum PlistFiles {
   internal static let cfBundlePackageType: String = _document["CFBundlePackageType"]
   internal static let cfBundleShortVersionString: String = _document["CFBundleShortVersionString"]
   internal static let cfBundleVersion: String = _document["CFBundleVersion"]
+  internal static let googleApiKey: String = _document["GOOGLE_API_KEY"]
+  internal static let googleApiUrl: String = _document["GOOGLE_API_URL"]
   internal static let lsRequiresIPhoneOS: Bool = _document["LSRequiresIPhoneOS"]
   internal static let nsLocationWhenInUseUsageDescription: String = _document["NSLocationWhenInUseUsageDescription"]
   internal static let uiLaunchStoryboardName: String = _document["UILaunchStoryboardName"]
@@ -29,6 +30,7 @@ internal enum PlistFiles {
   internal static let uiRequiresFullScreen: Bool = _document["UIRequiresFullScreen"]
   internal static let uiSupportedInterfaceOrientations: [String] = _document["UISupportedInterfaceOrientations"]
   internal static let uiSupportedInterfaceOrientationsIpad: [String] = _document["UISupportedInterfaceOrientations~ipad"]
+  internal static let wikiApiUrl: String = _document["WIKI_API_URL"]
 }
 // swiftlint:enable identifier_name line_length type_body_length
 

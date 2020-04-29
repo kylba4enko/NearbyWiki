@@ -14,13 +14,23 @@ var container: Container = .init {
         LocationServiceImpl()
     }.inObjectScope(.transient)
 
-    $0.register(PlacesRequestService.self) { _ in
-        PlacesRequestServiceImpl()
+    $0.register(PointOfInterestRequestService.self) { _ in
+        PointOfInterestRequestServiceImpl()
+    }.inObjectScope(.transient)
+
+    $0.register(ImageRequestService.self) { _ in
+        ImageRequestServiceImpl()
+    }.inObjectScope(.transient)
+
+    $0.register(RouteRequestService.self) { _ in
+        RouteRequestServiceImpl()
     }.inObjectScope(.transient)
 }
 
 func resolve() -> LocationService { return resolve(LocationService.self) }
-func resolve() -> PlacesRequestService { return resolve(PlacesRequestService.self) }
+func resolve() -> PointOfInterestRequestService { return resolve(PointOfInterestRequestService.self) }
+func resolve() -> ImageRequestService { return resolve(ImageRequestService.self) }
+func resolve() -> RouteRequestService { return resolve(RouteRequestService.self) }
 
 private func resolve<T>(_ type: T.Type) -> T {
     guard let resolved = container.resolve(type) else {

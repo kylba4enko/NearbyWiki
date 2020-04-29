@@ -9,4 +9,6 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-API_URL = https:/$()/$()en.wikipedia.org/w/api.php
+WIKI_API_URL = https:/$()/$()en.wikipedia.org/w/api.php
+GOOGLE_API_URL = https:/$()/$()maps.googleapis.com/maps/api
+GOOGLE_API_KEY = AIzaSyDRrVSN3yMuSrgr_mXun0bty9dVXUBHXio
