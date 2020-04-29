@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84229E3224574F3C00C0137C /* ObservableAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84229E2D24574F3C00C0137C /* ObservableAvailability.swift */; };
-		84229E3324574F3C00C0137C /* Observable+ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84229E2E24574F3C00C0137C /* Observable+ModelMapper.swift */; };
-		84229E3424574F3C00C0137C /* Single+ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84229E2F24574F3C00C0137C /* Single+ModelMapper.swift */; };
-		84229E3524574F3C00C0137C /* Response+ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84229E3124574F3C00C0137C /* Response+ModelMapper.swift */; };
+		8449D2642458615F007778D8 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449D2632458615F007778D8 /* DataExtension.swift */; };
+		8449D26624586C1E007778D8 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449D26524586C1E007778D8 /* CollectionExtension.swift */; };
+		8449D26824587067007778D8 /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449D26724587067007778D8 /* PointAnnotation.swift */; };
+		844A93B1245840D200A79142 /* PointOfInterestDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A93B0245840D200A79142 /* PointOfInterestDetails.swift */; };
 		845ABA8F2456DC3500BFF31A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845ABA8E2456DC3500BFF31A /* LocationService.swift */; };
 		845ABA912456E57400BFF31A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845ABA902456E57400BFF31A /* HomePresenter.swift */; };
 		8468123324559E1C0007E159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468123224559E1C0007E159 /* AppDelegate.swift */; };
@@ -30,7 +30,19 @@
 		846812752455B8650007E159 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846812742455B8650007E159 /* Storyboards.swift */; };
 		84937E9C2457091000E24155 /* PlacesRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937E9B2457091000E24155 /* PlacesRequestService.swift */; };
 		84937E9E2457189000E24155 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937E9D2457189000E24155 /* DictionaryExtension.swift */; };
-		84937EA124571B4D00E24155 /* PlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937EA024571B4D00E24155 /* PlaceInfo.swift */; };
+		84937EA124571B4D00E24155 /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937EA024571B4D00E24155 /* PointOfInterest.swift */; };
+		84ED11FD24587EF400C18230 /* ImageRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED11FC24587EF400C18230 /* ImageRequestService.swift */; };
+		84ED12012458856000C18230 /* PointOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12002458856000C18230 /* PointOfInterestViewController.swift */; };
+		84ED1203245885B800C18230 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED1202245885B800C18230 /* NibLoadableView.swift */; };
+		84ED12052458A1D300C18230 /* RouteRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12042458A1D300C18230 /* RouteRequestService.swift */; };
+		84ED12072458B7FA00C18230 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12062458B7FA00C18230 /* Route.swift */; };
+		84ED120924595E3000C18230 /* PlaceInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED120824595E3000C18230 /* PlaceInfoPresenter.swift */; };
+		84ED120B24595EF400C18230 /* ContainerViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED120A24595EF400C18230 /* ContainerViewable.swift */; };
+		84ED120F2459863600C18230 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED120E2459863600C18230 /* Step.swift */; };
+		84ED12112459865500C18230 /* Bounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12102459865500C18230 /* Bounds.swift */; };
+		84ED12132459866900C18230 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12122459866900C18230 /* Coordinate.swift */; };
+		84ED1215245986E800C18230 /* TravelMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED1214245986E800C18230 /* TravelMode.swift */; };
+		84ED12172459896400C18230 /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12162459896400C18230 /* Leg.swift */; };
 		E5CA6F4D46E92F49470BB88E /* Pods_NearbyWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6110E928484B57020D47AD65 /* Pods_NearbyWiki.framework */; };
 		F4CA6A6B96F5AF6A9ADD8F43 /* Pods_NearbyWikiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83982501A4ADB151F8AB82BA /* Pods_NearbyWikiTests.framework */; };
 /* End PBXBuildFile section */
@@ -50,10 +62,10 @@
 		6110E928484B57020D47AD65 /* Pods_NearbyWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearbyWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		714C00590EB4D007EF8DD562 /* Pods-NearbyWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWiki.release.xcconfig"; path = "Target Support Files/Pods-NearbyWiki/Pods-NearbyWiki.release.xcconfig"; sourceTree = "<group>"; };
 		83982501A4ADB151F8AB82BA /* Pods_NearbyWikiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearbyWikiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84229E2D24574F3C00C0137C /* ObservableAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableAvailability.swift; sourceTree = "<group>"; };
-		84229E2E24574F3C00C0137C /* Observable+ModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+ModelMapper.swift"; sourceTree = "<group>"; };
-		84229E2F24574F3C00C0137C /* Single+ModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Single+ModelMapper.swift"; sourceTree = "<group>"; };
-		84229E3124574F3C00C0137C /* Response+ModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ModelMapper.swift"; sourceTree = "<group>"; };
+		8449D2632458615F007778D8 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		8449D26524586C1E007778D8 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
+		8449D26724587067007778D8 /* PointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotation.swift; sourceTree = "<group>"; };
+		844A93B0245840D200A79142 /* PointOfInterestDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestDetails.swift; sourceTree = "<group>"; };
 		845ABA8E2456DC3500BFF31A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		845ABA902456E57400BFF31A /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8468122F24559E1C0007E159 /* NearbyWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbyWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +90,19 @@
 		846812742455B8650007E159 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		84937E9B2457091000E24155 /* PlacesRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRequestService.swift; sourceTree = "<group>"; };
 		84937E9D2457189000E24155 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
-		84937EA024571B4D00E24155 /* PlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfo.swift; sourceTree = "<group>"; };
+		84937EA024571B4D00E24155 /* PointOfInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
+		84ED11FC24587EF400C18230 /* ImageRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestService.swift; sourceTree = "<group>"; };
+		84ED12002458856000C18230 /* PointOfInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestViewController.swift; sourceTree = "<group>"; };
+		84ED1202245885B800C18230 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		84ED12042458A1D300C18230 /* RouteRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRequestService.swift; sourceTree = "<group>"; };
+		84ED12062458B7FA00C18230 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		84ED120824595E3000C18230 /* PlaceInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoPresenter.swift; sourceTree = "<group>"; };
+		84ED120A24595EF400C18230 /* ContainerViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewable.swift; sourceTree = "<group>"; };
+		84ED120E2459863600C18230 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		84ED12102459865500C18230 /* Bounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bounds.swift; sourceTree = "<group>"; };
+		84ED12122459866900C18230 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		84ED1214245986E800C18230 /* TravelMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMode.swift; sourceTree = "<group>"; };
+		84ED12162459896400C18230 /* Leg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		8AB9C45C36480C2683E60D3A /* Pods-NearbyWikiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWikiTests.debug.xcconfig"; path = "Target Support Files/Pods-NearbyWikiTests/Pods-NearbyWikiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6A5947D9D01CC14DC1062C7 /* Pods-NearbyWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWiki.debug.xcconfig"; path = "Target Support Files/Pods-NearbyWiki/Pods-NearbyWiki.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,23 +136,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		84229E2C24574F3C00C0137C /* RxMoya-ModelMapper */ = {
+		8449D26924587076007778D8 /* Annotation */ = {
 			isa = PBXGroup;
 			children = (
-				84229E2D24574F3C00C0137C /* ObservableAvailability.swift */,
-				84229E2E24574F3C00C0137C /* Observable+ModelMapper.swift */,
-				84229E2F24574F3C00C0137C /* Single+ModelMapper.swift */,
-				84229E3124574F3C00C0137C /* Response+ModelMapper.swift */,
+				8449D26724587067007778D8 /* PointAnnotation.swift */,
 			);
-			path = "RxMoya-ModelMapper";
-			sourceTree = "<group>";
-		};
-		84229E36245755BB00C0137C /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				84229E2C24574F3C00C0137C /* RxMoya-ModelMapper */,
-			);
-			path = Vendor;
+			path = Annotation;
 			sourceTree = "<group>";
 		};
 		8468122624559E1C0007E159 = {
@@ -177,7 +190,6 @@
 				8468125424559F960007E159 /* AppCoordinator.swift */,
 				846812622455AD8B0007E159 /* AppDependencies.swift */,
 				846812572455A0B60007E159 /* Sources */,
-				84229E36245755BB00C0137C /* Vendor */,
 				846812582455A0BD0007E159 /* Resources */,
 			);
 			path = Application;
@@ -186,6 +198,7 @@
 		846812572455A0B60007E159 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8449D26924587076007778D8 /* Annotation */,
 				84937E9F24571B3100E24155 /* Models */,
 				846812692455AF080007E159 /* Extensions */,
 				846812642455AE5E0007E159 /* Protocols */,
@@ -217,8 +230,8 @@
 		8468125A2455A1670007E159 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				84ED12182459914800C18230 /* Network */,
 				845ABA8E2456DC3500BFF31A /* LocationService.swift */,
-				84937E9B2457091000E24155 /* PlacesRequestService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -234,6 +247,7 @@
 		8468125C2455A1790007E159 /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				84ED11F924587C2800C18230 /* PlaceInfo */,
 				845ABA902456E57400BFF31A /* HomePresenter.swift */,
 				8468123624559E1C0007E159 /* HomeViewController.swift */,
 				8468123824559E1C0007E159 /* Main.storyboard */,
@@ -264,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				846812652455AE870007E159 /* AlertViewable.swift */,
+				84ED1202245885B800C18230 /* NibLoadableView.swift */,
+				84ED120A24595EF400C18230 /* ContainerViewable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -273,6 +289,8 @@
 			children = (
 				8468126A2455AF210007E159 /* StringExtension.swift */,
 				84937E9D2457189000E24155 /* DictionaryExtension.swift */,
+				8449D2632458615F007778D8 /* DataExtension.swift */,
+				8449D26524586C1E007778D8 /* CollectionExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -280,9 +298,51 @@
 		84937E9F24571B3100E24155 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				84937EA024571B4D00E24155 /* PlaceInfo.swift */,
+				84ED120D2459860D00C18230 /* Route */,
+				84ED120C2459860600C18230 /* Place */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		84ED11F924587C2800C18230 /* PlaceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				84ED120824595E3000C18230 /* PlaceInfoPresenter.swift */,
+				84ED12002458856000C18230 /* PointOfInterestViewController.swift */,
+			);
+			path = PlaceInfo;
+			sourceTree = "<group>";
+		};
+		84ED120C2459860600C18230 /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				84937EA024571B4D00E24155 /* PointOfInterest.swift */,
+				844A93B0245840D200A79142 /* PointOfInterestDetails.swift */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
+		84ED120D2459860D00C18230 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				84ED12062458B7FA00C18230 /* Route.swift */,
+				84ED12162459896400C18230 /* Leg.swift */,
+				84ED120E2459863600C18230 /* Step.swift */,
+				84ED12102459865500C18230 /* Bounds.swift */,
+				84ED12122459866900C18230 /* Coordinate.swift */,
+				84ED1214245986E800C18230 /* TravelMode.swift */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		84ED12182459914800C18230 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				84937E9B2457091000E24155 /* PlacesRequestService.swift */,
+				84ED11FC24587EF400C18230 /* ImageRequestService.swift */,
+				84ED12042458A1D300C18230 /* RouteRequestService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		9697E1C2B759CE89C00C195B /* Pods */ = {
@@ -459,7 +519,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+			shellScript = "
+";
 		};
 		846812602455A91C0007E159 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -504,22 +565,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				846812662455AE870007E159 /* AlertViewable.swift in Sources */,
+				84ED12012458856000C18230 /* PointOfInterestViewController.swift in Sources */,
+				84ED12132459866900C18230 /* Coordinate.swift in Sources */,
 				846812702455B0DB0007E159 /* Assets.swift in Sources */,
 				846812722455B0DB0007E159 /* Plist.swift in Sources */,
-				84937EA124571B4D00E24155 /* PlaceInfo.swift in Sources */,
-				84229E3524574F3C00C0137C /* Response+ModelMapper.swift in Sources */,
+				844A93B1245840D200A79142 /* PointOfInterestDetails.swift in Sources */,
+				8449D2642458615F007778D8 /* DataExtension.swift in Sources */,
+				8449D26624586C1E007778D8 /* CollectionExtension.swift in Sources */,
+				84937EA124571B4D00E24155 /* PointOfInterest.swift in Sources */,
+				84ED11FD24587EF400C18230 /* ImageRequestService.swift in Sources */,
 				845ABA912456E57400BFF31A /* HomePresenter.swift in Sources */,
 				846812732455B0DB0007E159 /* L10n.swift in Sources */,
-				84229E3424574F3C00C0137C /* Single+ModelMapper.swift in Sources */,
+				84ED120F2459863600C18230 /* Step.swift in Sources */,
 				84937E9E2457189000E24155 /* DictionaryExtension.swift in Sources */,
-				84229E3224574F3C00C0137C /* ObservableAvailability.swift in Sources */,
 				84937E9C2457091000E24155 /* PlacesRequestService.swift in Sources */,
-				84229E3324574F3C00C0137C /* Observable+ModelMapper.swift in Sources */,
 				846812632455AD8B0007E159 /* AppDependencies.swift in Sources */,
+				84ED12172459896400C18230 /* Leg.swift in Sources */,
+				84ED120924595E3000C18230 /* PlaceInfoPresenter.swift in Sources */,
 				8468126B2455AF210007E159 /* StringExtension.swift in Sources */,
+				8449D26824587067007778D8 /* PointAnnotation.swift in Sources */,
+				84ED12052458A1D300C18230 /* RouteRequestService.swift in Sources */,
+				84ED1215245986E800C18230 /* TravelMode.swift in Sources */,
+				84ED1203245885B800C18230 /* NibLoadableView.swift in Sources */,
 				845ABA8F2456DC3500BFF31A /* LocationService.swift in Sources */,
+				84ED120B24595EF400C18230 /* ContainerViewable.swift in Sources */,
+				84ED12112459865500C18230 /* Bounds.swift in Sources */,
 				846812752455B8650007E159 /* Storyboards.swift in Sources */,
 				8468125524559F960007E159 /* AppCoordinator.swift in Sources */,
+				84ED12072458B7FA00C18230 /* Route.swift in Sources */,
 				8468123724559E1C0007E159 /* HomeViewController.swift in Sources */,
 				8468123324559E1C0007E159 /* AppDelegate.swift in Sources */,
 			);

@@ -17,14 +17,11 @@ protocol LocationService {
 class LocationServiceImpl: NSObject, LocationService {
 
     private let locationManager = CLLocationManager()
-    private var onUpdateCallback: ((CLLocation) -> Void)?
-    private var onFailCallback: ((Error) -> Void)?
-
-    private var variable = PublishSubject<CLLocation>()
+    private var locationSubject = PublishSubject<CLLocation>()
 
     override init() {
         super.init()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.delegate = self
     }
 
@@ -35,7 +32,7 @@ class LocationServiceImpl: NSObject, LocationService {
     func startListenLocation() -> Observable<CLLocation> {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        return variable.asObservable()
+        return locationSubject.asObservable()
     }
 
     func stopListenLocation() {
@@ -47,11 +44,11 @@ extension LocationServiceImpl: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLocation = locations.first {
-            variable.onNext(currentLocation)
+            locationSubject.onNext(currentLocation)
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        variable.onError(error)
+        locationSubject.onError(error)
     }
 }

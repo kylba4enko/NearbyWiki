@@ -23,6 +23,8 @@ internal enum StoryboardScene {
     internal static let initialScene = InitialSceneType<NearbyWiki.HomeViewController>(storyboard: Main.self)
 
     internal static let homeViewController = SceneType<NearbyWiki.HomeViewController>(storyboard: Main.self, identifier: "HomeViewController")
+
+    internal static let placeInfoViewController = SceneType<NearbyWiki.PointOfInterestViewController>(storyboard: Main.self, identifier: "PlaceInfoViewController")
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name

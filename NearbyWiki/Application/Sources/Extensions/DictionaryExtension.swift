@@ -6,8 +6,13 @@
 //  Copyright © 2020 test. All rights reserved.
 //
 
-func +<Key, Value> (lhs: [Key: Value], rhs: [Key: Value]) -> [Key: Value] {
-    var result = lhs
-    rhs.forEach { result[$0] = $1 }
-    return result
+import Foundation
+
+extension Dictionary {
+
+    func adding(_ dictionary: [Key: Value]) -> [Key: Value] {
+        var result = self
+        dictionary.forEach { result[$0] = $1 }
+        return result
+    }
 }
