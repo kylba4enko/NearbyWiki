@@ -10,18 +10,23 @@ struct PointOfInterestDetails: Decodable {
 
     let identifier: Int
     let title: String
-    let thumbnails: [PlaceThumbnail]
+    let url: String
+    let thumbnails: [PointOfInterestThumbnail]
 
     private enum CodingKeys: String, CodingKey {
         case identifier = "pageid"
         case title
         case thumbnails = "images"
+        case url = "fullurl"
     }
 }
 
-struct PlaceThumbnail: Decodable {
+struct PointOfInterestThumbnail: Decodable {
 
     let title: String
+    var fileName: String? {
+        title.components(separatedBy: ":").last
+    }
 
     private enum CodingKeys: String, CodingKey {
         case title

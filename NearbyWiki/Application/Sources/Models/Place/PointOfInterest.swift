@@ -5,7 +5,7 @@
 //  Created by Max Kulbachenko on 27.04.2020.
 //  Copyright © 2020 test. All rights reserved.
 //
-import MapKit
+import CoreLocation
 
 struct PointOfInterest: Decodable {
 

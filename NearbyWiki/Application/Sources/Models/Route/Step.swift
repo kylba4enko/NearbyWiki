@@ -7,6 +7,7 @@
 //
 
 struct Step: Decodable {
+
     let distance: String
     let duration: String
     let instuction: String
@@ -28,8 +29,8 @@ struct Step: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let distanceContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .distance)
         let durationContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .duration)
-        self.distance = try distanceContainer.decode(String.self, forKey: .text)
-        self.duration = try durationContainer.decode(String.self, forKey: .text)
+        distance = try distanceContainer.decode(String.self, forKey: .text)
+        duration = try durationContainer.decode(String.self, forKey: .text)
         instuction = try container.decode(String.self, forKey: .instuction)
         startLocation = try container.decode(Coordinate.self, forKey: .startLocation)
         endLocation = try container.decode(Coordinate.self, forKey: .endLocation)

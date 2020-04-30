@@ -7,6 +7,7 @@
 //
 
 struct Bounds: Decodable {
+
     let northeast: Coordinate
     let southwest: Coordinate
 

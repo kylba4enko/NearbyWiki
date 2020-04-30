@@ -20,11 +20,13 @@ internal enum StoryboardScene {
   internal enum Main: StoryboardType {
     internal static let storyboardName = "Main"
 
-    internal static let initialScene = InitialSceneType<NearbyWiki.HomeViewController>(storyboard: Main.self)
+    internal static let initialScene = InitialSceneType<NearbyWiki.MapViewController>(storyboard: Main.self)
 
-    internal static let homeViewController = SceneType<NearbyWiki.HomeViewController>(storyboard: Main.self, identifier: "HomeViewController")
+    internal static let homeViewController = SceneType<NearbyWiki.MapViewController>(storyboard: Main.self, identifier: "HomeViewController")
 
     internal static let placeInfoViewController = SceneType<NearbyWiki.PointOfInterestViewController>(storyboard: Main.self, identifier: "PlaceInfoViewController")
+
+    internal static let routeStepsViewController = SceneType<NearbyWiki.RouteStepsViewController>(storyboard: Main.self, identifier: "RouteStepsViewController")
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
