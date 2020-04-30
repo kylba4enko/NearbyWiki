@@ -7,6 +7,7 @@
 //
 
 struct Route: Decodable {
+
     let legs: [Leg]
     let bounds: Bounds
 

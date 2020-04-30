@@ -9,35 +9,41 @@
 import MapKit
 import UIKit
 
-protocol HomeView: class, AlertViewable, ContainerViewable {
+protocol MapView: class, AlertViewable, ContainerViewable {
     func focusOn(_ coordinate: CLLocationCoordinate2D)
     func showPointsOfInterest(_ pointsOfInterest: [PointOfInterest])
     func showContainer(_ show: Bool, completion: (() -> Void)?)
-    func showRouteCoordinates(_ coordinates: [CLLocationCoordinate2D])
+    func showRoute(_ coordinates: [CLLocationCoordinate2D])
+    func clearRoutes()
     func updateBounds(_ bounds: Bounds)
     func deselectPointsOfInterest()
 }
 
-class HomeViewController: UIViewController {
+class MapViewController: UIViewController {
 
+    //swiftlint:disable private_outlet
     @IBOutlet weak var containerView: UIView!
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var containerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var containerViewBottomConstraint: NSLayoutConstraint!
 
-    var presenter: HomePresenter!
+    var presenter: MapPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.showsUserLocation = true
         mapView.delegate = self
-        containerViewHeightConstraint.constant = view.frame.size.height / 2
+        containerViewHeightConstraint.constant = view.frame.size.height * 0.6
         containerViewBottomConstraint.constant = containerViewHeightConstraint.constant
         presenter.viewDidLoad()
     }
+
+    @IBAction func closeButtonPressed() {
+        presenter.viewDidPressCloseButton()
+    }
 }
 
-extension HomeViewController: HomeView {
+extension MapViewController: MapView {
 
     func focusOn(_ coordinate: CLLocationCoordinate2D) {
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
@@ -61,10 +67,14 @@ extension HomeViewController: HomeView {
         })
     }
 
-    func showRouteCoordinates(_ coordinates: [CLLocationCoordinate2D]) {
+    func showRoute(_ coordinates: [CLLocationCoordinate2D]) {
         let polilyne = MKGeodesicPolyline(coordinates: coordinates, count: coordinates.count)
-        mapView.removeOverlays(mapView.overlays)
+        clearRoutes()
         mapView.addOverlay(polilyne)
+    }
+
+    func clearRoutes() {
+        mapView.removeOverlays(mapView.overlays)
     }
 
     func updateBounds(_ bounds: Bounds) {
@@ -84,7 +94,7 @@ extension HomeViewController: HomeView {
     }
 }
 
-extension HomeViewController: MKMapViewDelegate {
+extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? PointAnnotation {

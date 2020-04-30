@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>WIKI_API_URL</key>
-	<string>$(WIKI_API_URL)</string>
+	<key>WIKIPEDIA_API_URL</key>
+	<string>$(WIKIPEDIA_API_URL)</string>
+	<key>WIKIMEDIA_API_URL</key>
+	<string>$(WIKIMEDIA_API_URL)</string>
 	<key>GOOGLE_API_URL</key>
 	<string>$(GOOGLE_API_URL)</string>
 	<key>GOOGLE_API_KEY</key>

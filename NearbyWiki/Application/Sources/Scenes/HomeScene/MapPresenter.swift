@@ -10,25 +10,26 @@ import CoreLocation
 import Moya
 import RxSwift
 
-protocol HomePresenter {
-    init(view: HomeView,
+protocol MapPresenter {
+    init(view: MapView,
          locationService: LocationService,
          pointOfInterestRequestService: PointOfInterestRequestService)
 
     func viewDidLoad()
     func viewDidSelectPointOfInterest(_ identifier: Int)
+    func viewDidPressCloseButton()
 }
 
-class HomePresenterImpl: HomePresenter {
+class MapPresenterImpl: MapPresenter {
 
-    private weak var view: HomeView?
+    private weak var view: MapView?
     private let locationService: LocationService
     private let pointOfInterestRequestService: PointOfInterestRequestService
     private let disposeBag = DisposeBag()
     private var currentLocation: CLLocationCoordinate2D?
     private var places: [PointOfInterest]?
 
-    required init(view: HomeView,
+    required init(view: MapView,
                   locationService: LocationService = resolve(),
                   pointOfInterestRequestService: PointOfInterestRequestService = resolve()) {
 
@@ -54,13 +55,19 @@ class HomePresenterImpl: HomePresenter {
                                                           currentLocation: currentLocation)
         poiViewController.presenter = poiPresenter
         view?.replaceContainerContent(with: poiViewController)
+        view?.clearRoutes()
         view?.showContainer(true) { [weak self] in
             self?.view?.focusOn(selectedPoi.coordinate)
         }
     }
+
+    func viewDidPressCloseButton() {
+        view?.deselectPointsOfInterest()
+        view?.showContainer(false, completion: nil)
+    }
 }
 
-private extension HomePresenterImpl {
+private extension MapPresenterImpl {
 
     func findInitialLocation() {
         locationService.startListenLocation()
@@ -89,21 +96,24 @@ private extension HomePresenterImpl {
     }
 }
 
-extension HomePresenterImpl: PointOfInterestPresenterDelegate {
+extension MapPresenterImpl: PointOfInterestPresenterDelegate {
 
     func pointOfInterestPresenterDidSelectRoute(_ route: Route) {
-        guard let coordinates = route.legs.first?.steps.flatMap({ step in
-            [step.startLocation.asCLLocationCoordinate2D(),
-             step.endLocation.asCLLocationCoordinate2D()]}) else {
+        guard let steps = route.legs.first?.steps else {
             return
         }
-        view?.deselectPointsOfInterest()
-        view?.showRouteCoordinates(coordinates)
-        view?.updateBounds(route.bounds)
-    }
+        let coordinates = steps.flatMap({ step in
+            [step.startLocation.asCLLocationCoordinate2D(),
+             step.endLocation.asCLLocationCoordinate2D()]
+        })
 
-    func pointOfInterestPresenterDidClose() {
         view?.deselectPointsOfInterest()
-        view?.showContainer(false, completion: nil)
+        view?.showRoute(coordinates)
+        view?.updateBounds(route.bounds)
+
+        let stepsViewController = StoryboardScene.Main.routeStepsViewController.instantiate()
+        let stepsPresenter = RouteStepsPresenterImpl(view: stepsViewController, steps: steps)
+        stepsViewController.presenter = stepsPresenter
+        view?.replaceContainerContent(with: stepsViewController)
     }
 }

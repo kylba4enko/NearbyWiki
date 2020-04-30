@@ -30,7 +30,8 @@ internal enum PlistFiles {
   internal static let uiRequiresFullScreen: Bool = _document["UIRequiresFullScreen"]
   internal static let uiSupportedInterfaceOrientations: [String] = _document["UISupportedInterfaceOrientations"]
   internal static let uiSupportedInterfaceOrientationsIpad: [String] = _document["UISupportedInterfaceOrientations~ipad"]
-  internal static let wikiApiUrl: String = _document["WIKI_API_URL"]
+  internal static let wikimediaApiUrl: String = _document["WIKIMEDIA_API_URL"]
+  internal static let wikipediaApiUrl: String = _document["WIKIPEDIA_API_URL"]
 }
 // swiftlint:enable identifier_name line_length type_body_length
 

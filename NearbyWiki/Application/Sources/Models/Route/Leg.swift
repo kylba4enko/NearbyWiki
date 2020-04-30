@@ -7,8 +7,11 @@
 //
 
 struct Leg: Decodable {
+
     let distance: String
     let duration: String
+    let startAddress: String
+    let endAddress: String
     let startLocation: Coordinate
     let endLocation: Coordinate
     let steps: [Step]
@@ -18,6 +21,8 @@ struct Leg: Decodable {
         case duration
         case startLocation = "start_location"
         case endLocation = "end_location"
+        case startAddress = "start_address"
+        case endAddress = "end_address"
         case steps
         case text
     }
@@ -31,5 +36,7 @@ struct Leg: Decodable {
         startLocation = try container.decode(Coordinate.self, forKey: .startLocation)
         endLocation = try container.decode(Coordinate.self, forKey: .endLocation)
         steps = try container.decode([Step].self, forKey: .steps)
+        startAddress = try container.decode(String.self, forKey: .startAddress)
+        endAddress = try container.decode(String.self, forKey: .endAddress)
     }
 }

@@ -7,14 +7,15 @@
 //
 
 import MapKit
+import Moya
 import RxSwift
 
 protocol PointOfInterestPresenterDelegate: class {
-    func pointOfInterestPresenterDidClose()
     func pointOfInterestPresenterDidSelectRoute(_ route: Route)
 }
 
 protocol PointOfInterestPresenter {
+
     init(view: PointOfInterestView,
          delegate: PointOfInterestPresenterDelegate,
          pointOfInterest: PointOfInterest,
@@ -24,7 +25,10 @@ protocol PointOfInterestPresenter {
          imageRequestService: ImageRequestService)
 
     func viewDidLoad()
-    func viewDidPressCloseButton()
+    func viewDidPressWikipediaButton()
+    func viewDidSelectRoute(_ route: Route)
+    func routesCount() -> Int
+    func route(for index: Int) -> Route
 }
 
 class PointOfInterestPresenterImpl: PointOfInterestPresenter {
@@ -36,6 +40,8 @@ class PointOfInterestPresenterImpl: PointOfInterestPresenter {
     private let imageRequestService: ImageRequestService
     private let currentLocation: CLLocationCoordinate2D
     private let pointOfInterest: PointOfInterest
+    private var pointOfInterestDetailed: PointOfInterestDetails?
+    private var routes: [Route] = []
     private let disposeBag = DisposeBag()
 
     required init(view: PointOfInterestView,
@@ -60,31 +66,39 @@ class PointOfInterestPresenterImpl: PointOfInterestPresenter {
         fetchRoutes()
     }
 
-    func viewDidPressCloseButton() {
-        delegate?.pointOfInterestPresenterDidClose()
+    func viewDidPressWikipediaButton() {
+        if let poi = pointOfInterestDetailed, let url = URL(string: poi.url) {
+            UIApplication.shared.open(url)
+        }
+    }
+
+    func viewDidSelectRoute(_ route: Route) {
+        delegate?.pointOfInterestPresenterDidSelectRoute(route)
+    }
+
+    func routesCount() -> Int {
+        routes.count
+    }
+
+    func route(for index: Int) -> Route {
+        routes[index]
     }
 }
 
 private extension PointOfInterestPresenterImpl {
 
     func fetchPointOfInterestDetails() {
-            pointOfInterestRequestService.fetchPointOfInterestDetails(pointOfInterest.identifier)
-                .subscribe(onSuccess: { [weak self] placeDetails in
-                    self?.view?.show(title: placeDetails.title)
+        pointOfInterestRequestService.fetchPointOfInterestDetails(pointOfInterest.identifier)
+                .subscribe(onSuccess: { [weak self] poi in
+                    guard let self = self else {
+                        return
+                    }
+                    self.pointOfInterestDetailed = poi
+                    self.fetchImages()
+                    self.view?.show(title: poi.title)
 
-    //                var coll: [Single<Response>] = []
-    //                place.thumbnails.prefix(3).forEach { element in
-    //                    coll.append((self?.imageRequestService.fetchImage(name: element.title))!)
-    //                }
-    //
-    //                Single.zip(coll).subscribe(onSuccess: { elements in
-    //                    self?.view?.showNearbyPlaceDetails(place)
-    //                    print(elements)
-    //                }) { error in
-    //                    print(error)
-    //                }
                 }, onError: { [weak self] error in
-                    self?.view?.showAlert(title: L10n.failedToGetLocation, message: error.localizedDescription)
+                    self?.view?.showAlert(title: L10n.failedToLoadPointsOfInterest, message: error.localizedDescription)
                 }).disposed(by: disposeBag)
     }
 
@@ -93,11 +107,23 @@ private extension PointOfInterestPresenterImpl {
         let finish = Coordinate(lat: pointOfInterest.latitude, lon: pointOfInterest.longitude)
         routeRequestService.fetchRoute(start: start, finish: finish)
             .subscribe(onSuccess: { [weak self] routes in
-                if let route = routes.first {
-                    self?.delegate?.pointOfInterestPresenterDidSelectRoute(route)
-                }
+                self?.routes = routes
+                self?.view?.reloadRoutes()
             }, onError: { [weak self] error in
                 self?.view?.showAlert(title: L10n.failedToLoadRoutes, message: error.localizedDescription)
             }).disposed(by: disposeBag)
+    }
+
+    func fetchImages() {
+        guard let poi = pointOfInterestDetailed else {
+            return
+        }
+
+        let collection: [Single<Image>] = poi.thumbnails.prefix(3).compactMap { $0.fileName }.map {
+            self.imageRequestService.fetchImage(name: $0, size: 100)
+        }
+        Single.zip(collection).subscribe(onSuccess: { images in
+            self.view?.show(images: images)
+        }).disposed(by: self.disposeBag)
     }
 }

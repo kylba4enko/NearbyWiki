@@ -9,6 +9,7 @@
 import CoreLocation
 
 struct Coordinate: Decodable {
+
     let lat: Double
     let lon: Double
 

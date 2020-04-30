@@ -16,7 +16,7 @@ protocol RouteRequestService {
 
 class RouteRequestServiceImpl: RouteRequestService {
 
-    private let provider = MoyaProvider<RouteTarget>(plugins: [NetworkLoggerPlugin()])
+    private let provider = MoyaProvider<RouteTarget>()
 
     func fetchRoute(start: Coordinate, finish: Coordinate) -> Single<[Route]> {
         return Single<[Route]>.create { single in

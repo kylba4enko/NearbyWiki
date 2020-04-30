@@ -11,26 +11,26 @@ import Moya
 import RxSwift
 
 protocol ImageRequestService {
-    func fetchImage(name: String) -> Single<Response>
+    func fetchImage(name: String, size: Int) -> Single<Image>
 }
 
 class ImageRequestServiceImpl: ImageRequestService {
 
-    private let provider = MoyaProvider<ImageTarget>(plugins: [NetworkLoggerPlugin()])
+    private let provider = MoyaProvider<ImageTarget>()
 
-    func fetchImage(name: String) -> Single<Response> {
-        return provider.rx.request(.getImage(name))
+    func fetchImage(name: String, size: Int) -> Single<Image> {
+        provider.rx.request(.getImage(name, size)).mapImage()
     }
 }
 
 private enum ImageTarget {
-    case getImage(String)
+    case getImage(String, Int)
 }
 
 extension ImageTarget: TargetType {
 
     var baseURL: URL {
-        URL(string: PlistFiles.wikiApiUrl)!
+        URL(string: PlistFiles.wikimediaApiUrl)!
     }
 
     var path: String {
@@ -46,20 +46,18 @@ extension ImageTarget: TargetType {
     }
     var task: Task {
         let parameters: [String: Any]
-        let commonParameters: [String: Any] = ["action": "query",
-                                               "format": "json"]
+
         switch self {
-        case .getImage(let name):
-            parameters = ["titles": name,
-                          "prop": "pageimages",
-                          "pithumbsize": 100]
+        case .getImage(let name, let size):
+            parameters = ["f": name,
+                          "w": size]
         }
 
-        return .requestParameters(parameters: commonParameters.adding(parameters), encoding: URLEncoding.queryString)
+        return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
     }
 
     var headers: [String: String]? {
-        ["Content-Type": "application/json"]
+        nil
     }
 
     var validationType: ValidationType {
