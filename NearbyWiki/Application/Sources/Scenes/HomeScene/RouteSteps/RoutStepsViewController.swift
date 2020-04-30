@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RouteStepsView: class {
-    func reloadSteps()
+    func showSteps()
 }
 
 final class RouteStepsViewController: UIViewController, RouteStepsView {
@@ -23,7 +23,7 @@ final class RouteStepsViewController: UIViewController, RouteStepsView {
         presenter.viewDidLoad()
     }
 
-    func reloadSteps() {
+    func showSteps() {
         stepsTableView.reloadData()
     }
 }

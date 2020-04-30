@@ -24,7 +24,7 @@ final class RouteStepsPresenterImpl: RouteStepsPresenter {
     }
 
     func viewDidLoad() {
-        view?.reloadSteps()
+        view?.showSteps()
     }
 
     func stepsCount() -> Int {

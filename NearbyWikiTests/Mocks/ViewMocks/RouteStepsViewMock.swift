@@ -9,18 +9,14 @@
 import MockSix
 @testable import NearbyWiki
 
-final class RouteStepsViewMock: UIViewController, Mock, RouteStepsView {
-    func reloadSteps() {
+final class RouteStepsViewMock: Mock, RouteStepsView {
 
+    func showSteps() {
+        registerInvocation(for: .showSteps)
     }
 
     enum Methods: Int {
-        case setUserNameValid
-        case setPasswordValid
-        case showAlert
-        case showLoadingIndicator
-        case hideLoadingIndicator
+        case showSteps
     }
     typealias MockMethod = Methods
-
 }

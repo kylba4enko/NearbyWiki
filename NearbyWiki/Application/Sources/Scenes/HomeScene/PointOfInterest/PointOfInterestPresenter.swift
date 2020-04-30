@@ -71,7 +71,7 @@ final class PointOfInterestPresenterImpl: PointOfInterestPresenter {
             self.routes = routes
 
             self.view?.show(title: poiDetails.title)
-            self.view?.reloadRoutes()
+            self.view?.showRoutes()
 
             self.fetchImages(for: poiDetails).asObservable().subscribe(onNext: { images in
                 self.view?.show(images: images)

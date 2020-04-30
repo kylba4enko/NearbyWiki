@@ -12,7 +12,7 @@ protocol PointOfInterestView: class, AlertViewable {
     func show(title: String)
     func show(images: [UIImage])
     func showMask(_ show: Bool)
-    func reloadRoutes()
+    func showRoutes()
 }
 
 final class PointOfInterestViewController: UIViewController {
@@ -54,7 +54,7 @@ extension PointOfInterestViewController: PointOfInterestView {
         })
     }
 
-    func reloadRoutes() {
+    func showRoutes() {
         routesTableView.reloadData()
     }
 }

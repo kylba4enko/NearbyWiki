@@ -19,6 +19,6 @@ final class RouteStepTableViewCell: UITableViewCell, ReusableView {
         numberLabel.text = "\(number)."
         distanceLabel.text = step.distance
         durationLabel.text = step.duration
-        instructionLabel.attributedText = step.instuction.toHtmlAttributedString()
+        instructionLabel.attributedText = step.instruction.toHtmlAttributedString()
     }
 }

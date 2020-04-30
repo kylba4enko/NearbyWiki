@@ -10,7 +10,7 @@
 		8401C904245AF8B400088B31 /* PoinOfInterestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401C903245AF8B400088B31 /* PoinOfInterestTarget.swift */; };
 		8401C906245AF8FF00088B31 /* ImageTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401C905245AF8FF00088B31 /* ImageTarget.swift */; };
 		8401C908245AF93300088B31 /* RouteTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401C907245AF93300088B31 /* RouteTarget.swift */; };
-		8401C90C245AFDEB00088B31 /* RouteStepsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401C90B245AFDEB00088B31 /* RouteStepsPresenterSpec.swift */; };
+		8401C90C245AFDEB00088B31 /* PointOfInterestPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401C90B245AFDEB00088B31 /* PointOfInterestPresenterSpec.swift */; };
 		8401C910245AFF8600088B31 /* RouteStepsViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401C90F245AFF8600088B31 /* RouteStepsViewMock.swift */; };
 		8449D2642458615F007778D8 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449D2632458615F007778D8 /* DataExtension.swift */; };
 		8449D26624586C1E007778D8 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449D26524586C1E007778D8 /* CollectionExtension.swift */; };
@@ -23,7 +23,6 @@
 		8468123A24559E1C0007E159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8468123824559E1C0007E159 /* Main.storyboard */; };
 		8468123C24559E200007E159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8468123B24559E200007E159 /* Assets.xcassets */; };
 		8468123F24559E200007E159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8468123D24559E200007E159 /* LaunchScreen.storyboard */; };
-		8468124A24559E200007E159 /* NearbyWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468124924559E200007E159 /* NearbyWikiTests.swift */; };
 		8468125524559F960007E159 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468125424559F960007E159 /* AppCoordinator.swift */; };
 		846812632455AD8B0007E159 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846812622455AD8B0007E159 /* AppDependencies.swift */; };
 		846812662455AE870007E159 /* AlertViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846812652455AE870007E159 /* AlertViewable.swift */; };
@@ -42,6 +41,14 @@
 		84937E9C2457091000E24155 /* PointOfInterestRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937E9B2457091000E24155 /* PointOfInterestRequestService.swift */; };
 		84937E9E2457189000E24155 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937E9D2457189000E24155 /* DictionaryExtension.swift */; };
 		84937EA124571B4D00E24155 /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937EA024571B4D00E24155 /* PointOfInterest.swift */; };
+		84A45E3D245B171900203202 /* RouteStepsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E3C245B171900203202 /* RouteStepsPresenterSpec.swift */; };
+		84A45E3F245B173100203202 /* PointOfInterestViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E3E245B173100203202 /* PointOfInterestViewMock.swift */; };
+		84A45E41245B198F00203202 /* PointOfInterestPresenterDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E40245B198F00203202 /* PointOfInterestPresenterDelegateMock.swift */; };
+		84A45E45245B1D0C00203202 /* LocationServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E44245B1D0C00203202 /* LocationServiceMock.swift */; };
+		84A45E47245B1EC500203202 /* PointOfInterestRequestServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E46245B1EC500203202 /* PointOfInterestRequestServiceMock.swift */; };
+		84A45E49245B24BE00203202 /* RouteRequestServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E48245B24BE00203202 /* RouteRequestServiceMock.swift */; };
+		84A45E4B245B254400203202 /* ImageRequestServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E4A245B254400203202 /* ImageRequestServiceMock.swift */; };
+		84A45E4D245B57CD00203202 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E4C245B57CD00203202 /* Extensions.swift */; };
 		84ED11FD24587EF400C18230 /* ImageRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED11FC24587EF400C18230 /* ImageRequestService.swift */; };
 		84ED12012458856000C18230 /* PointOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12002458856000C18230 /* PointOfInterestViewController.swift */; };
 		84ED1203245885B800C18230 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED1202245885B800C18230 /* NibLoadableView.swift */; };
@@ -75,7 +82,7 @@
 		8401C903245AF8B400088B31 /* PoinOfInterestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoinOfInterestTarget.swift; sourceTree = "<group>"; };
 		8401C905245AF8FF00088B31 /* ImageTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTarget.swift; sourceTree = "<group>"; };
 		8401C907245AF93300088B31 /* RouteTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTarget.swift; sourceTree = "<group>"; };
-		8401C90B245AFDEB00088B31 /* RouteStepsPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStepsPresenterSpec.swift; sourceTree = "<group>"; };
+		8401C90B245AFDEB00088B31 /* PointOfInterestPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestPresenterSpec.swift; sourceTree = "<group>"; };
 		8401C90F245AFF8600088B31 /* RouteStepsViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStepsViewMock.swift; sourceTree = "<group>"; };
 		8449D2632458615F007778D8 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		8449D26524586C1E007778D8 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
@@ -91,7 +98,6 @@
 		8468123E24559E200007E159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8468124024559E200007E159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8468124524559E200007E159 /* NearbyWikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbyWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8468124924559E200007E159 /* NearbyWikiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyWikiTests.swift; sourceTree = "<group>"; };
 		8468124B24559E200007E159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8468125424559F960007E159 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8468125E2455A2690007E159 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
@@ -112,6 +118,14 @@
 		84937E9B2457091000E24155 /* PointOfInterestRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestRequestService.swift; sourceTree = "<group>"; };
 		84937E9D2457189000E24155 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		84937EA024571B4D00E24155 /* PointOfInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
+		84A45E3C245B171900203202 /* RouteStepsPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStepsPresenterSpec.swift; sourceTree = "<group>"; };
+		84A45E3E245B173100203202 /* PointOfInterestViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestViewMock.swift; sourceTree = "<group>"; };
+		84A45E40245B198F00203202 /* PointOfInterestPresenterDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestPresenterDelegateMock.swift; sourceTree = "<group>"; };
+		84A45E44245B1D0C00203202 /* LocationServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceMock.swift; sourceTree = "<group>"; };
+		84A45E46245B1EC500203202 /* PointOfInterestRequestServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestRequestServiceMock.swift; sourceTree = "<group>"; };
+		84A45E48245B24BE00203202 /* RouteRequestServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRequestServiceMock.swift; sourceTree = "<group>"; };
+		84A45E4A245B254400203202 /* ImageRequestServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestServiceMock.swift; sourceTree = "<group>"; };
+		84A45E4C245B57CD00203202 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		84ED11FC24587EF400C18230 /* ImageRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestService.swift; sourceTree = "<group>"; };
 		84ED12002458856000C18230 /* PointOfInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestViewController.swift; sourceTree = "<group>"; };
 		84ED1202245885B800C18230 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
@@ -167,7 +181,8 @@
 		8401C90A245AFD8600088B31 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				8401C90B245AFDEB00088B31 /* RouteStepsPresenterSpec.swift */,
+				8401C90B245AFDEB00088B31 /* PointOfInterestPresenterSpec.swift */,
+				84A45E3C245B171900203202 /* RouteStepsPresenterSpec.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -175,6 +190,8 @@
 		8401C90D245AFF5500088B31 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				84A45E43245B1CFA00203202 /* ServiceMocks */,
+				84A45E42245B199300203202 /* DelegateMocks */,
 				8401C90E245AFF6100088B31 /* ViewMocks */,
 			);
 			path = Mocks;
@@ -184,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				8401C90F245AFF8600088B31 /* RouteStepsViewMock.swift */,
+				84A45E3E245B173100203202 /* PointOfInterestViewMock.swift */,
 			);
 			path = ViewMocks;
 			sourceTree = "<group>";
@@ -229,9 +247,9 @@
 		8468124824559E200007E159 /* NearbyWikiTests */ = {
 			isa = PBXGroup;
 			children = (
+				84A45E4C245B57CD00203202 /* Extensions.swift */,
 				8401C90D245AFF5500088B31 /* Mocks */,
 				8401C909245AFD8000088B31 /* Tests */,
-				8468124924559E200007E159 /* NearbyWikiTests.swift */,
 				8468124B24559E200007E159 /* Info.plist */,
 			);
 			path = NearbyWikiTests;
@@ -369,6 +387,25 @@
 				84ED120C2459860600C18230 /* Place */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		84A45E42245B199300203202 /* DelegateMocks */ = {
+			isa = PBXGroup;
+			children = (
+				84A45E40245B198F00203202 /* PointOfInterestPresenterDelegateMock.swift */,
+			);
+			path = DelegateMocks;
+			sourceTree = "<group>";
+		};
+		84A45E43245B1CFA00203202 /* ServiceMocks */ = {
+			isa = PBXGroup;
+			children = (
+				84A45E44245B1D0C00203202 /* LocationServiceMock.swift */,
+				84A45E46245B1EC500203202 /* PointOfInterestRequestServiceMock.swift */,
+				84A45E48245B24BE00203202 /* RouteRequestServiceMock.swift */,
+				84A45E4A245B254400203202 /* ImageRequestServiceMock.swift */,
+			);
+			path = ServiceMocks;
 			sourceTree = "<group>";
 		};
 		84ED11F924587C2800C18230 /* PointOfInterest */ = {
@@ -697,9 +734,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A45E45245B1D0C00203202 /* LocationServiceMock.swift in Sources */,
+				84A45E47245B1EC500203202 /* PointOfInterestRequestServiceMock.swift in Sources */,
+				84A45E3D245B171900203202 /* RouteStepsPresenterSpec.swift in Sources */,
+				84A45E49245B24BE00203202 /* RouteRequestServiceMock.swift in Sources */,
 				8401C910245AFF8600088B31 /* RouteStepsViewMock.swift in Sources */,
-				8468124A24559E200007E159 /* NearbyWikiTests.swift in Sources */,
-				8401C90C245AFDEB00088B31 /* RouteStepsPresenterSpec.swift in Sources */,
+				84A45E4D245B57CD00203202 /* Extensions.swift in Sources */,
+				84A45E3F245B173100203202 /* PointOfInterestViewMock.swift in Sources */,
+				8401C90C245AFDEB00088B31 /* PointOfInterestPresenterSpec.swift in Sources */,
+				84A45E4B245B254400203202 /* ImageRequestServiceMock.swift in Sources */,
+				84A45E41245B198F00203202 /* PointOfInterestPresenterDelegateMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -898,8 +942,10 @@
 			baseConfigurationReference = 8AB9C45C36480C2683E60D3A /* Pods-NearbyWikiTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AMGNMYCP4D;
 				INFOPLIST_FILE = NearbyWikiTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -922,8 +968,10 @@
 			baseConfigurationReference = 3A4BE86A335B9DF361B94494 /* Pods-NearbyWikiTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AMGNMYCP4D;
 				INFOPLIST_FILE = NearbyWikiTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
