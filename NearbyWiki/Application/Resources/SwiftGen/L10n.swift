@@ -19,8 +19,6 @@ internal enum L10n {
   internal static let failedToLoadRoutes = L10n.tr("Localizable", "Failed to load routes")
   /// Ok
   internal static let ok = L10n.tr("Localizable", "Ok")
-  /// You
-  internal static let you = L10n.tr("Localizable", "You")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

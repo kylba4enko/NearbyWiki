@@ -19,7 +19,7 @@ protocol MapView: class, AlertViewable, ContainerViewable {
     func deselectPointsOfInterest()
 }
 
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
 
     //swiftlint:disable private_outlet
     @IBOutlet weak var containerView: UIView!
@@ -34,11 +34,11 @@ class MapViewController: UIViewController {
         mapView.showsUserLocation = true
         mapView.delegate = self
         containerViewHeightConstraint.constant = view.frame.size.height * 0.6
-        containerViewBottomConstraint.constant = containerViewHeightConstraint.constant
+        containerViewBottomConstraint.constant = -containerViewHeightConstraint.constant
         presenter.viewDidLoad()
     }
 
-    @IBAction func closeButtonPressed() {
+    @IBAction private func closeButtonPressed() {
         presenter.viewDidPressCloseButton()
     }
 }
@@ -59,7 +59,7 @@ extension MapViewController: MapView {
     }
 
     func showContainer(_ show: Bool, completion: (() -> Void)?) {
-        containerViewBottomConstraint.constant = show ? .zero : containerViewHeightConstraint.constant
+        containerViewBottomConstraint.constant = show ? .zero : -containerViewHeightConstraint.constant
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         }, completion: { _ in
@@ -97,9 +97,10 @@ extension MapViewController: MapView {
 extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let annotation = view.annotation as? PointAnnotation {
-            presenter.viewDidSelectPointOfInterest(annotation.identifier)
+        guard let annotation = view.annotation as? PointAnnotation else {
+            return
         }
+        presenter.viewDidSelectPointOfInterest(annotation.identifier)
     }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {

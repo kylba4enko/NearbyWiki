@@ -13,7 +13,6 @@ struct Step: Decodable {
     let instuction: String
     let startLocation: Coordinate
     let endLocation: Coordinate
-    let travelMode: TravelMode
 
     private enum CodingKeys: String, CodingKey {
         case distance
@@ -21,7 +20,6 @@ struct Step: Decodable {
         case instuction = "html_instructions"
         case startLocation = "start_location"
         case endLocation = "end_location"
-        case travelMode = "travel_mode"
         case text
     }
 
@@ -34,6 +32,5 @@ struct Step: Decodable {
         instuction = try container.decode(String.self, forKey: .instuction)
         startLocation = try container.decode(Coordinate.self, forKey: .startLocation)
         endLocation = try container.decode(Coordinate.self, forKey: .endLocation)
-        travelMode = try container.decode(TravelMode.self, forKey: .travelMode)
     }
 }

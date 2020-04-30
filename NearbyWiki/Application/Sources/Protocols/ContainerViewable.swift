@@ -10,7 +10,6 @@ import UIKit
 
 protocol ContainerViewable {
     var containerView: UIView! { get }
-    func addContainerContent(viewController: UIViewController)
     func replaceContainerContent(with viewController: UIViewController)
 }
 
@@ -23,7 +22,7 @@ extension ContainerViewable where Self: UIViewController {
         addContainerContent(viewController: viewController)
     }
 
-    func addContainerContent(viewController: UIViewController) {
+    private func addContainerContent(viewController: UIViewController) {
         addChild(viewController)
         containerView.addSubview(viewController.view)
         viewController.view.frame = containerView.bounds

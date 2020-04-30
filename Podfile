@@ -10,7 +10,13 @@ target 'NearbyWiki' do
   pod 'Moya/RxSwift',             '14.0.0'
 
   target 'NearbyWikiTests' do
+    
     inherit! :search_paths
+    
+    pod 'Quick',          '2.2.0'
+    pod 'MockSix',        '0.1.7'
+    pod 'NimbleMockSix',  '0.1.4'
+    
   end
 
 end

@@ -12,7 +12,7 @@ protocol RouteStepsView: class {
     func reloadSteps()
 }
 
-class RouteStepsViewController: UIViewController, RouteStepsView {
+final class RouteStepsViewController: UIViewController, RouteStepsView {
 
     @IBOutlet private weak var stepsTableView: UITableView!
 

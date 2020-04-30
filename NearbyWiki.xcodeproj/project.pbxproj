@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8401C904245AF8B400088B31 /* PoinOfInterestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401C903245AF8B400088B31 /* PoinOfInterestTarget.swift */; };
+		8401C906245AF8FF00088B31 /* ImageTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401C905245AF8FF00088B31 /* ImageTarget.swift */; };
+		8401C908245AF93300088B31 /* RouteTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401C907245AF93300088B31 /* RouteTarget.swift */; };
+		8401C90C245AFDEB00088B31 /* RouteStepsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401C90B245AFDEB00088B31 /* RouteStepsPresenterSpec.swift */; };
+		8401C910245AFF8600088B31 /* RouteStepsViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401C90F245AFF8600088B31 /* RouteStepsViewMock.swift */; };
 		8449D2642458615F007778D8 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449D2632458615F007778D8 /* DataExtension.swift */; };
 		8449D26624586C1E007778D8 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449D26524586C1E007778D8 /* CollectionExtension.swift */; };
 		8449D26824587067007778D8 /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449D26724587067007778D8 /* PointAnnotation.swift */; };
@@ -47,7 +52,6 @@
 		84ED120F2459863600C18230 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED120E2459863600C18230 /* Step.swift */; };
 		84ED12112459865500C18230 /* Bounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12102459865500C18230 /* Bounds.swift */; };
 		84ED12132459866900C18230 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12122459866900C18230 /* Coordinate.swift */; };
-		84ED1215245986E800C18230 /* TravelMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED1214245986E800C18230 /* TravelMode.swift */; };
 		84ED12172459896400C18230 /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12162459896400C18230 /* Leg.swift */; };
 		E5CA6F4D46E92F49470BB88E /* Pods_NearbyWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6110E928484B57020D47AD65 /* Pods_NearbyWiki.framework */; };
 		F4CA6A6B96F5AF6A9ADD8F43 /* Pods_NearbyWikiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83982501A4ADB151F8AB82BA /* Pods_NearbyWikiTests.framework */; };
@@ -68,6 +72,11 @@
 		6110E928484B57020D47AD65 /* Pods_NearbyWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearbyWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		714C00590EB4D007EF8DD562 /* Pods-NearbyWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWiki.release.xcconfig"; path = "Target Support Files/Pods-NearbyWiki/Pods-NearbyWiki.release.xcconfig"; sourceTree = "<group>"; };
 		83982501A4ADB151F8AB82BA /* Pods_NearbyWikiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearbyWikiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8401C903245AF8B400088B31 /* PoinOfInterestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoinOfInterestTarget.swift; sourceTree = "<group>"; };
+		8401C905245AF8FF00088B31 /* ImageTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTarget.swift; sourceTree = "<group>"; };
+		8401C907245AF93300088B31 /* RouteTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTarget.swift; sourceTree = "<group>"; };
+		8401C90B245AFDEB00088B31 /* RouteStepsPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStepsPresenterSpec.swift; sourceTree = "<group>"; };
+		8401C90F245AFF8600088B31 /* RouteStepsViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStepsViewMock.swift; sourceTree = "<group>"; };
 		8449D2632458615F007778D8 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		8449D26524586C1E007778D8 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		8449D26724587067007778D8 /* PointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotation.swift; sourceTree = "<group>"; };
@@ -113,7 +122,6 @@
 		84ED120E2459863600C18230 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		84ED12102459865500C18230 /* Bounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bounds.swift; sourceTree = "<group>"; };
 		84ED12122459866900C18230 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
-		84ED1214245986E800C18230 /* TravelMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMode.swift; sourceTree = "<group>"; };
 		84ED12162459896400C18230 /* Leg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		8AB9C45C36480C2683E60D3A /* Pods-NearbyWikiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWikiTests.debug.xcconfig"; path = "Target Support Files/Pods-NearbyWikiTests/Pods-NearbyWikiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6A5947D9D01CC14DC1062C7 /* Pods-NearbyWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyWiki.debug.xcconfig"; path = "Target Support Files/Pods-NearbyWiki/Pods-NearbyWiki.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +154,38 @@
 				83982501A4ADB151F8AB82BA /* Pods_NearbyWikiTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8401C909245AFD8000088B31 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8401C90A245AFD8600088B31 /* Presenters */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		8401C90A245AFD8600088B31 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				8401C90B245AFDEB00088B31 /* RouteStepsPresenterSpec.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		8401C90D245AFF5500088B31 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8401C90E245AFF6100088B31 /* ViewMocks */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8401C90E245AFF6100088B31 /* ViewMocks */ = {
+			isa = PBXGroup;
+			children = (
+				8401C90F245AFF8600088B31 /* RouteStepsViewMock.swift */,
+			);
+			path = ViewMocks;
 			sourceTree = "<group>";
 		};
 		8449D26924587076007778D8 /* Annotation */ = {
@@ -189,6 +229,8 @@
 		8468124824559E200007E159 /* NearbyWikiTests */ = {
 			isa = PBXGroup;
 			children = (
+				8401C90D245AFF5500088B31 /* Mocks */,
+				8401C909245AFD8000088B31 /* Tests */,
 				8468124924559E200007E159 /* NearbyWikiTests.swift */,
 				8468124B24559E200007E159 /* Info.plist */,
 			);
@@ -356,7 +398,6 @@
 				84ED120E2459863600C18230 /* Step.swift */,
 				84ED12102459865500C18230 /* Bounds.swift */,
 				84ED12122459866900C18230 /* Coordinate.swift */,
-				84ED1214245986E800C18230 /* TravelMode.swift */,
 			);
 			path = Route;
 			sourceTree = "<group>";
@@ -367,6 +408,9 @@
 				84937E9B2457091000E24155 /* PointOfInterestRequestService.swift */,
 				84ED11FC24587EF400C18230 /* ImageRequestService.swift */,
 				84ED12042458A1D300C18230 /* RouteRequestService.swift */,
+				8401C903245AF8B400088B31 /* PoinOfInterestTarget.swift */,
+				8401C905245AF8FF00088B31 /* ImageTarget.swift */,
+				8401C907245AF93300088B31 /* RouteTarget.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -414,6 +458,7 @@
 				8468124124559E200007E159 /* Sources */,
 				8468124224559E200007E159 /* Frameworks */,
 				8468124324559E200007E159 /* Resources */,
+				A13BA722D70410282D358480 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -565,6 +610,23 @@
 			shellPath = /bin/sh;
 			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen config run --config  NearbyWiki-swiftgen.yml\n";
 		};
+		A13BA722D70410282D358480 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NearbyWikiTests/Pods-NearbyWikiTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NearbyWikiTests/Pods-NearbyWikiTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NearbyWikiTests/Pods-NearbyWikiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E524771A5C36B237369A412C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -601,12 +663,14 @@
 				8449D2642458615F007778D8 /* DataExtension.swift in Sources */,
 				8449D26624586C1E007778D8 /* CollectionExtension.swift in Sources */,
 				84937EA124571B4D00E24155 /* PointOfInterest.swift in Sources */,
+				8401C906245AF8FF00088B31 /* ImageTarget.swift in Sources */,
 				84ED11FD24587EF400C18230 /* ImageRequestService.swift in Sources */,
 				845ABA912456E57400BFF31A /* MapPresenter.swift in Sources */,
 				846812732455B0DB0007E159 /* L10n.swift in Sources */,
 				84ED120F2459863600C18230 /* Step.swift in Sources */,
 				84728D97245AC1880001DA35 /* RouteStepTableViewCell.swift in Sources */,
 				84937E9E2457189000E24155 /* DictionaryExtension.swift in Sources */,
+				8401C908245AF93300088B31 /* RouteTarget.swift in Sources */,
 				84937E9C2457091000E24155 /* PointOfInterestRequestService.swift in Sources */,
 				846812632455AD8B0007E159 /* AppDependencies.swift in Sources */,
 				84ED12172459896400C18230 /* Leg.swift in Sources */,
@@ -616,8 +680,8 @@
 				8449D26824587067007778D8 /* PointAnnotation.swift in Sources */,
 				84ED12052458A1D300C18230 /* RouteRequestService.swift in Sources */,
 				84728D8E2459ECE80001DA35 /* UITableVIewExtension.swift in Sources */,
-				84ED1215245986E800C18230 /* TravelMode.swift in Sources */,
 				84ED1203245885B800C18230 /* NibLoadableView.swift in Sources */,
+				8401C904245AF8B400088B31 /* PoinOfInterestTarget.swift in Sources */,
 				845ABA8F2456DC3500BFF31A /* LocationService.swift in Sources */,
 				84ED120B24595EF400C18230 /* ContainerViewable.swift in Sources */,
 				84ED12112459865500C18230 /* Bounds.swift in Sources */,
@@ -633,7 +697,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8401C910245AFF8600088B31 /* RouteStepsViewMock.swift in Sources */,
 				8468124A24559E200007E159 /* NearbyWikiTests.swift in Sources */,
+				8401C90C245AFDEB00088B31 /* RouteStepsPresenterSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,11 +897,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8AB9C45C36480C2683E60D3A /* Pods-NearbyWikiTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NearbyWikiTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -843,6 +909,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = testtask.NearbyWikiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearbyWiki.app/NearbyWiki";
@@ -853,11 +921,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A4BE86A335B9DF361B94494 /* Pods-NearbyWikiTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NearbyWikiTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -865,6 +933,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = testtask.NearbyWikiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearbyWiki.app/NearbyWiki";

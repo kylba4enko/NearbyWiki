@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RouteStepTableViewCell: UITableViewCell, ReusableView {
+final class RouteStepTableViewCell: UITableViewCell, ReusableView {
 
     @IBOutlet private weak var numberLabel: UILabel!
     @IBOutlet private weak var durationLabel: UILabel!
