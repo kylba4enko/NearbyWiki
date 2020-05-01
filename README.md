@@ -29,4 +29,4 @@ The NearbyWiki is a simple iOS application to fetch the current location of the 
 2. Open ```NearbyWiki.xcworkspace```
 3. To build project ```Command + B```
 3. To run project ```Command + R```
-4. To run project ```Command + U```
+4. To run tests ```Command + U```
