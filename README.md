@@ -2,6 +2,7 @@
 
 ## Description
 The NearbyWiki is a simple iOS application to fetch the current location of the device and get nearby English language Wikipedia articles. It allows to show route and steps.
+Branch: `develop`
 
 ## Tech stack
 - iOS version: `12.0`
@@ -25,8 +26,9 @@ The NearbyWiki is a simple iOS application to fetch the current location of the 
 - pod 'NimbleMockSix' - Nimble extension for MockSix
 
 ## Installation
-1. Run ```pod install```
-2. Open ```NearbyWiki.xcworkspace```
-3. To build project ```Command + B```
-3. To run project ```Command + R```
-4. To run tests ```Command + U```
+1. Change branch to `develop`
+1. Run `pod install`
+2. Open `NearbyWiki.xcworkspace`
+3. To build project `Command + B`
+3. To run project `Command + R`
+4. To run tests `Command + U`
