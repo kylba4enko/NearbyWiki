@@ -7,7 +7,6 @@
 //
 
 import CoreLocation
-import Moya
 import RxSwift
 
 protocol MapPresenter {
@@ -20,7 +19,7 @@ protocol MapPresenter {
     func viewDidPressCloseButton()
 }
 
-class MapPresenterImpl: MapPresenter {
+final class MapPresenterImpl: MapPresenter {
 
     private weak var view: MapView?
     private let locationService: LocationService

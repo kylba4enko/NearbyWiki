@@ -39,4 +39,21 @@ struct Leg: Decodable {
         startAddress = try container.decode(String.self, forKey: .startAddress)
         endAddress = try container.decode(String.self, forKey: .endAddress)
     }
+
+    init(distance: String,
+         duration: String,
+         startAddress: String,
+         endAddress: String,
+         startLocation: Coordinate,
+         endLocation: Coordinate,
+         steps: [Step]) {
+
+        self.distance = distance
+        self.duration = duration
+        self.startAddress = startAddress
+        self.endAddress = endAddress
+        self.startLocation = startLocation
+        self.endLocation = endLocation
+        self.steps = steps
+    }
 }

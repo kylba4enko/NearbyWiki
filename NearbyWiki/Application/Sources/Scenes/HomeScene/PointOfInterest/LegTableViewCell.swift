@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LegTableViewCell: UITableViewCell, ReusableView {
+final class LegTableViewCell: UITableViewCell, ReusableView {
 
     var onGetThereButtonPressedCallback: (() -> Void)?
 
@@ -22,7 +22,7 @@ class LegTableViewCell: UITableViewCell, ReusableView {
         durationLabel.text = leg.duration
     }
 
-    @IBAction func getThereButtonPressed() {
+    @IBAction private func getThereButtonPressed() {
         onGetThereButtonPressedCallback?()
     }
 }

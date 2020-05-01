@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class PointAnnotation: MKPointAnnotation {
+final class PointAnnotation: MKPointAnnotation {
 
     private(set) var identifier: Int
 

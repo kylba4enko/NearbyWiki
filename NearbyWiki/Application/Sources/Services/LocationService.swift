@@ -14,10 +14,10 @@ protocol LocationService {
     func stopListenLocation()
 }
 
-class LocationServiceImpl: NSObject, LocationService {
+final class LocationServiceImpl: NSObject, LocationService {
 
     private let locationManager = CLLocationManager()
-    private var locationSubject = PublishSubject<CLLocation>()
+    private let locationSubject = PublishSubject<CLLocation>()
 
     override init() {
         super.init()

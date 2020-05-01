@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RouteStepTableViewCell: UITableViewCell, ReusableView {
+final class RouteStepTableViewCell: UITableViewCell, ReusableView {
 
     @IBOutlet private weak var numberLabel: UILabel!
     @IBOutlet private weak var durationLabel: UILabel!
@@ -19,6 +19,6 @@ class RouteStepTableViewCell: UITableViewCell, ReusableView {
         numberLabel.text = "\(number)."
         distanceLabel.text = step.distance
         durationLabel.text = step.duration
-        instructionLabel.attributedText = step.instuction.toHtmlAttributedString()
+        instructionLabel.attributedText = step.instruction.toHtmlAttributedString()
     }
 }

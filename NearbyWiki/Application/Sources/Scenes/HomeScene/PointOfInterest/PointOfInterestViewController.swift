@@ -11,11 +11,13 @@ import UIKit
 protocol PointOfInterestView: class, AlertViewable {
     func show(title: String)
     func show(images: [UIImage])
-    func reloadRoutes()
+    func showMask(_ show: Bool)
+    func showRoutes()
 }
 
-class PointOfInterestViewController: UIViewController {
+final class PointOfInterestViewController: UIViewController {
 
+    @IBOutlet private weak var maskView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var stackView: UIStackView!
     @IBOutlet private weak var routesTableView: UITableView!
@@ -27,7 +29,7 @@ class PointOfInterestViewController: UIViewController {
         presenter.viewDidLoad()
     }
 
-    @IBAction private  func wikipediaButtonPressed() {
+    @IBAction private func wikipediaButtonPressed() {
         presenter.viewDidPressWikipediaButton()
     }
 }
@@ -46,7 +48,13 @@ extension PointOfInterestViewController: PointOfInterestView {
         }
     }
 
-    func reloadRoutes() {
+    func showMask(_ show: Bool) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.maskView.alpha = show ? 1 : 0
+        })
+    }
+
+    func showRoutes() {
         routesTableView.reloadData()
     }
 }

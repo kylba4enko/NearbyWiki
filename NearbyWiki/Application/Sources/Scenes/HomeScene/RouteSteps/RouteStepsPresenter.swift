@@ -13,7 +13,7 @@ protocol RouteStepsPresenter {
     func step(for index: Int) -> Step
 }
 
-class RouteStepsPresenterImpl: RouteStepsPresenter {
+final class RouteStepsPresenterImpl: RouteStepsPresenter {
 
     private weak var view: RouteStepsView?
     private let steps: [Step]
@@ -24,7 +24,7 @@ class RouteStepsPresenterImpl: RouteStepsPresenter {
     }
 
     func viewDidLoad() {
-        view?.reloadSteps()
+        view?.showSteps()
     }
 
     func stepsCount() -> Int {

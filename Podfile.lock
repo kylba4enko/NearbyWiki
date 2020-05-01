@@ -1,17 +1,26 @@
 PODS:
   - Alamofire (5.1.0)
+  - MockSix (0.1.7)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
   - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
+  - Nimble (7.3.4)
+  - NimbleMockSix (0.1.4):
+    - MockSix (= 0.1.7)
+    - Nimble (~> 7.0)
+  - Quick (2.2.0)
   - RxSwift (5.1.1)
   - SwiftGen (6.1.0)
   - SwiftLint (0.27.0)
   - Swinject (2.6.0)
 
 DEPENDENCIES:
+  - MockSix (= 0.1.7)
   - Moya/RxSwift (= 14.0.0)
+  - NimbleMockSix (= 0.1.4)
+  - Quick (= 2.2.0)
   - SwiftGen (= 6.1.0)
   - SwiftLint (= 0.27.0)
   - Swinject (= 2.6.0)
@@ -19,7 +28,11 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - MockSix
     - Moya
+    - Nimble
+    - NimbleMockSix
+    - Quick
     - RxSwift
     - SwiftGen
     - SwiftLint
@@ -27,12 +40,16 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  MockSix: 85e1f278a047d236b52d47696e6d353ef78f7d1f
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
+  NimbleMockSix: bbd96059123a353a588215dee776ecad29bf35dc
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: 30773cd0e5079de5c3b350cf67f134840d97b1b3
+PODFILE CHECKSUM: ef72a9cba0a50a3fd3d11d0687f2351b63f7f4c0
 
 COCOAPODS: 1.8.4

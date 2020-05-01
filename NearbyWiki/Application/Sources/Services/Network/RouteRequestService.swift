@@ -6,7 +6,6 @@
 //  Copyright © 2020 test. All rights reserved.
 //
 
-import Alamofire
 import Moya
 import RxSwift
 
@@ -14,7 +13,7 @@ protocol RouteRequestService {
     func fetchRoute(start: Coordinate, finish: Coordinate) -> Single<[Route]>
 }
 
-class RouteRequestServiceImpl: RouteRequestService {
+final class RouteRequestServiceImpl: RouteRequestService {
 
     private let provider = MoyaProvider<RouteTarget>()
 
@@ -38,48 +37,5 @@ class RouteRequestServiceImpl: RouteRequestService {
             }
             return Disposables.create()
         }
-    }
-}
-
-private enum RouteTarget {
-    case getRoute(Coordinate, Coordinate)
-}
-
-extension RouteTarget: TargetType {
-
-    var baseURL: URL {
-        URL(string: PlistFiles.googleApiUrl)!
-    }
-
-    var path: String {
-        "directions/json"
-    }
-
-    var method: HTTPMethod {
-        .get
-    }
-
-    var sampleData: Data {
-        Data()
-    }
-    var task: Task {
-        let parameters: [String: Any]
-        switch self {
-        case .getRoute(let start, let finish):
-            parameters = [
-                "origin": "\(start.lat),\(start.lon)",
-                "destination": "\(finish.lat),\(finish.lon)",
-                "key": PlistFiles.googleApiKey]
-        }
-
-        return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-    }
-
-    var headers: [String: String]? {
-        ["Content-Type": "application/json"]
-    }
-
-    var validationType: ValidationType {
-        .successCodes
     }
 }
