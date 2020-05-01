@@ -34,7 +34,7 @@ final class PointOfInterestPresenterSpec: QuickSpec {
                                                          title: "poi",
                                                          url: "url",
                                                          thumbnails: thumbnails)
-            let routeMock = makeMockRoute()
+            let routeMock = Route.makeMockRoute()
 
             beforeEach {
                 resetMockSix()
@@ -154,24 +154,4 @@ final class PointOfInterestPresenterSpec: QuickSpec {
             }
         }
     }
-}
-
-private func makeMockRoute() -> Route {
-    let coordiante = Coordinate(lat: 10, lon: 20)
-
-    let step = Step(distance: "dist1",
-                    duration: "dur1",
-                    instruction: "inst1",
-                    startLocation: coordiante,
-                    endLocation: coordiante)
-
-    let leg = Leg(distance: "dist",
-                  duration: "dur",
-                  startAddress: "sa",
-                  endAddress: "ea",
-                  startLocation: coordiante,
-                  endLocation: coordiante,
-                  steps: [step, step, step])
-
-    return Route(legs: [leg], bounds: Bounds(northeast: coordiante, southwest: coordiante))
 }

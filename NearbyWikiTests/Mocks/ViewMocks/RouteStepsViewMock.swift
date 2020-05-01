@@ -11,12 +11,12 @@ import MockSix
 
 final class RouteStepsViewMock: Mock, RouteStepsView {
 
-    func showSteps() {
-        registerInvocation(for: .showSteps)
-    }
-
     enum Methods: Int {
         case showSteps
     }
     typealias MockMethod = Methods
+
+    func showSteps() {
+        registerInvocation(for: .showSteps)
+    }
 }

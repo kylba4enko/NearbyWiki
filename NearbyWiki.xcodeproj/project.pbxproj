@@ -18,6 +18,8 @@
 		844A93B1245840D200A79142 /* PointOfInterestDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A93B0245840D200A79142 /* PointOfInterestDetails.swift */; };
 		845ABA8F2456DC3500BFF31A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845ABA8E2456DC3500BFF31A /* LocationService.swift */; };
 		845ABA912456E57400BFF31A /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845ABA902456E57400BFF31A /* MapPresenter.swift */; };
+		845EF8E0245C3B16003FAAA9 /* MapPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EF8DF245C3B16003FAAA9 /* MapPresenterSpec.swift */; };
+		845EF8E2245C3B31003FAAA9 /* MapViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EF8E1245C3B31003FAAA9 /* MapViewMock.swift */; };
 		8468123324559E1C0007E159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468123224559E1C0007E159 /* AppDelegate.swift */; };
 		8468123724559E1C0007E159 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468123624559E1C0007E159 /* MapViewController.swift */; };
 		8468123A24559E1C0007E159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8468123824559E1C0007E159 /* Main.storyboard */; };
@@ -48,7 +50,7 @@
 		84A45E47245B1EC500203202 /* PointOfInterestRequestServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E46245B1EC500203202 /* PointOfInterestRequestServiceMock.swift */; };
 		84A45E49245B24BE00203202 /* RouteRequestServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E48245B24BE00203202 /* RouteRequestServiceMock.swift */; };
 		84A45E4B245B254400203202 /* ImageRequestServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E4A245B254400203202 /* ImageRequestServiceMock.swift */; };
-		84A45E4D245B57CD00203202 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E4C245B57CD00203202 /* Extensions.swift */; };
+		84A45E4D245B57CD00203202 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A45E4C245B57CD00203202 /* TestExtensions.swift */; };
 		84ED11FD24587EF400C18230 /* ImageRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED11FC24587EF400C18230 /* ImageRequestService.swift */; };
 		84ED12012458856000C18230 /* PointOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED12002458856000C18230 /* PointOfInterestViewController.swift */; };
 		84ED1203245885B800C18230 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED1202245885B800C18230 /* NibLoadableView.swift */; };
@@ -90,6 +92,8 @@
 		844A93B0245840D200A79142 /* PointOfInterestDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestDetails.swift; sourceTree = "<group>"; };
 		845ABA8E2456DC3500BFF31A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		845ABA902456E57400BFF31A /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		845EF8DF245C3B16003FAAA9 /* MapPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenterSpec.swift; sourceTree = "<group>"; };
+		845EF8E1245C3B31003FAAA9 /* MapViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewMock.swift; sourceTree = "<group>"; };
 		8468122F24559E1C0007E159 /* NearbyWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbyWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8468123224559E1C0007E159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8468123624559E1C0007E159 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +129,7 @@
 		84A45E46245B1EC500203202 /* PointOfInterestRequestServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestRequestServiceMock.swift; sourceTree = "<group>"; };
 		84A45E48245B24BE00203202 /* RouteRequestServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRequestServiceMock.swift; sourceTree = "<group>"; };
 		84A45E4A245B254400203202 /* ImageRequestServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestServiceMock.swift; sourceTree = "<group>"; };
-		84A45E4C245B57CD00203202 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		84A45E4C245B57CD00203202 /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		84ED11FC24587EF400C18230 /* ImageRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestService.swift; sourceTree = "<group>"; };
 		84ED12002458856000C18230 /* PointOfInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestViewController.swift; sourceTree = "<group>"; };
 		84ED1202245885B800C18230 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			children = (
 				8401C90B245AFDEB00088B31 /* PointOfInterestPresenterSpec.swift */,
 				84A45E3C245B171900203202 /* RouteStepsPresenterSpec.swift */,
+				845EF8DF245C3B16003FAAA9 /* MapPresenterSpec.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			children = (
 				8401C90F245AFF8600088B31 /* RouteStepsViewMock.swift */,
 				84A45E3E245B173100203202 /* PointOfInterestViewMock.swift */,
+				845EF8E1245C3B31003FAAA9 /* MapViewMock.swift */,
 			);
 			path = ViewMocks;
 			sourceTree = "<group>";
@@ -247,7 +253,7 @@
 		8468124824559E200007E159 /* NearbyWikiTests */ = {
 			isa = PBXGroup;
 			children = (
-				84A45E4C245B57CD00203202 /* Extensions.swift */,
+				84A45E4C245B57CD00203202 /* TestExtensions.swift */,
 				8401C90D245AFF5500088B31 /* Mocks */,
 				8401C909245AFD8000088B31 /* Tests */,
 				8468124B24559E200007E159 /* Info.plist */,
@@ -734,12 +740,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845EF8E0245C3B16003FAAA9 /* MapPresenterSpec.swift in Sources */,
 				84A45E45245B1D0C00203202 /* LocationServiceMock.swift in Sources */,
 				84A45E47245B1EC500203202 /* PointOfInterestRequestServiceMock.swift in Sources */,
+				845EF8E2245C3B31003FAAA9 /* MapViewMock.swift in Sources */,
 				84A45E3D245B171900203202 /* RouteStepsPresenterSpec.swift in Sources */,
 				84A45E49245B24BE00203202 /* RouteRequestServiceMock.swift in Sources */,
 				8401C910245AFF8600088B31 /* RouteStepsViewMock.swift in Sources */,
-				84A45E4D245B57CD00203202 /* Extensions.swift in Sources */,
+				84A45E4D245B57CD00203202 /* TestExtensions.swift in Sources */,
 				84A45E3F245B173100203202 /* PointOfInterestViewMock.swift in Sources */,
 				8401C90C245AFDEB00088B31 /* PointOfInterestPresenterSpec.swift in Sources */,
 				84A45E4B245B254400203202 /* ImageRequestServiceMock.swift in Sources */,
