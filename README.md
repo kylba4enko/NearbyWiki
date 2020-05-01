@@ -4,12 +4,12 @@
 The NearbyWiki is a simple iOS application to fetch the current location of the device and get nearby English language Wikipedia articles. It allows to show route and steps.
 
 ## Tech stack
-###### iOS version: 12.0
-###### Swift version: 5
-###### Dependencies Manager: Cococa Pods
-###### Architecture pattern: Model-View-Presenter, Coordiantor, Dependency Injection
-###### APIs: Wikipedia, Googole Directions API
-###### Unit Tests covarage
+iOS version: `12.0`
+Swift version: `5`
+Dependencies Manager: `Cococa Pods`
+Architecture patterns: `Model-View-Presenter`, `Coordiantor`, `Dependency Injection`, `Delegate`
+APIs: `Wikipedia`, `Googole Directions API`
+`Unit Tests coverage`
 
 ## Dependencies
 ##### Main: 
