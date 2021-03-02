@@ -3,6 +3,7 @@
 ## Description
 The NearbyWiki is a simple iOS application to fetch the current location of the device and get nearby English language Wikipedia articles. It allows to show route and steps.
 Branch: `develop`
+To use this app GOOGLE_API_KEY should be configured under Configuretions folder.
 
 ## Tech stack
 - iOS version: `12.0`
