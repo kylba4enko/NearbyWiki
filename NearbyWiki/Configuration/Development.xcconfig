@@ -12,4 +12,4 @@
 WIKIMEDIA_API_URL = https:/$()/$()commons.wikimedia.org/w/thumb.php
 WIKIPEDIA_API_URL = https:/$()/$()en.wikipedia.org/w/api.php
 GOOGLE_API_URL = https:/$()/$()maps.googleapis.com/maps/api
-GOOGLE_API_KEY = AIzaSyDRrVSN3yMuSrgr_mXun0bty9dVXUBHXio
+GOOGLE_API_KEY = API_KEY
